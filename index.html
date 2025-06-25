@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hischam El-Sobhi Coaching - Gesundheitscoaching & Mentale Stärke</title>
+    <title>Dr. Hischam El-Sobhi - Gesundheitscoaching & Nachhaltiges Abnehmen</title>
+    <meta name="description" content="Ärztlich betreutes Gesundheitscoaching für nachhaltiges Abnehmen. Individuelle Stoffwechselanalyse ohne Hunger & Verzicht. Jetzt Erstgespräch buchen.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1d4ed8', // Blau
-                        secondary: '#facc15', // Gelb
-                        accent: '#2563eb', // Akzentblau
+                        primary: '#3b82f6', // Soft blue
+                        secondary: '#f59e0b', // Warm amber
+                        accent: '#1e40af', // Darker blue
+                        beige: '#f5f5dc', // Soft beige
+                        lightBlue: '#dbeafe', // Very light blue
                     }
                 }
             }
@@ -28,177 +31,628 @@
 
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="bg-white">
     <!-- Sticky Header -->
-    <header class="fixed w-full bg-white shadow-md z-50">
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-primary">Hischam El-Sobhi</a>
+            <a href="index.html" class="text-2xl font-bold text-primary">Dr. Hischam El-Sobhi</a>
             <div class="hidden md:flex space-x-8">
-                <a href="methode.html" class="text-gray-600 hover:text-primary">Methode</a>
-                <a href="zusammenarbeit.html" class="text-gray-600 hover:text-primary">Zusammenarbeit</a>
-                <a href="testimonials.html" class="text-gray-600 hover:text-primary">Erfahrungen</a>
+                <a href="methode.html" class="text-gray-600 hover:text-primary transition-colors">Methode</a>
+                <a href="zusammenarbeit.html" class="text-gray-600 hover:text-primary transition-colors">Zusammenarbeit</a>
+                <a href="testimonials.html" class="text-gray-600 hover:text-primary transition-colors">Erfahrungen</a>
             </div>
-            <a href="https://deinbuchungslink.de" target="_blank" class="bg-secondary text-primary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition-colors">
+            <a href="https://deinbuchungslink.de" target="_blank" class="bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl">
                 Termin vereinbaren
             </a>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-b from-white to-gray-50">
+    <section class="pt-24 pb-16 bg-gradient-to-br from-lightBlue to-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Content -->
+                <div class="space-y-8 fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                        Endlich <span class="text-primary">nachhaltig abnehmen</span> ohne Hunger & Verzicht
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Ärztlich betreutes Gesundheitscoaching speziell für erschöpfte, übergewichtige Frauen. 
+                        Mit individueller Stoffwechselanalyse und ganzheitlichem Ansatz.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://deinbuchungslink.de" target="_blank" 
+                           class="bg-primary text-white px-8 py-4 rounded-full text-xl font-semibold hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl text-center">
+                            Jetzt Erstgespräch buchen
+                        </a>
+                        <a href="#video" class="flex items-center justify-center gap-2 text-primary hover:text-accent transition-colors">
+                            <i class="fas fa-play-circle text-2xl"></i>
+                            <span>Video ansehen</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right: Video -->
+                <div class="fade-in">
+                    <div class="relative bg-gray-200 rounded-2xl shadow-2xl overflow-hidden aspect-video">
+                        <iframe class="w-full h-full" 
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                title="Dr. Hischam El-Sobhi - Gesundheitscoaching" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Box -->
+    <section class="py-16 bg-beige">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-user-md text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">100% ärztlich betreut</h3>
+                    <p class="text-gray-600">Von einem erfahrenen Arzt für Allgemeinmedizin</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-flask text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Individuelle Stoffwechselanalyse</h3>
+                    <p class="text-gray-600">Wissenschaftlich fundierte Diagnostik</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-heart text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ohne Hunger & Verzicht</h3>
+                    <p class="text-gray-600">Nachhaltige Ernährungsumstellung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Timeline -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Dein neues Leben
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center fade-in">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">
+                        2
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Woche 2</h3>
+                    <p class="text-gray-600">Du schläfst besser und fühlst dich energiegeladener</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">
+                        4
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Woche 4</h3>
+                    <p class="text-gray-600">Die Hose passt wieder und dein Selbstvertrauen wächst</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">
+                        6
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Woche 6</h3>
+                    <p class="text-gray-600">Deine Energie ist zurück und du fühlst dich wie neu geboren</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Our Coaching Special -->
+    <section class="py-20 bg-lightBlue">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Was unser Coaching ausmacht
+            </h2>
+            
+            <!-- First Pair -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="slide-in-left">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Mindset & Motivation</h3>
+                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Wir arbeiten an deiner mentalen Einstellung und entwickeln eine positive Beziehung zu deinem Körper. 
+                        Ohne Druck, ohne Perfektionismus - nur mit der richtigen Motivation und dem richtigen Mindset.
+                    </p>
+                </div>
+                <div class="slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
+                         alt="Mindset Coaching" 
+                         class="rounded-2xl shadow-2xl w-full h-auto">
+                </div>
+            </div>
+
+            <!-- Second Pair -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="slide-in-left lg:order-2">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" 
+                         alt="Ernährung Coaching" 
+                         class="rounded-2xl shadow-2xl w-full h-auto">
+                </div>
+                <div class="slide-in-right lg:order-1">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Ernährung & Stoffwechsel</h3>
+                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Individuelle Ernährungsplanung basierend auf deiner Stoffwechselanalyse. 
+                        Keine einheitlichen Diäten - nur was für dich und deinen Körper funktioniert.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Third Pair -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="slide-in-left">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-dumbbell text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Bewegung & Aktivität</h3>
+                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Sanfte, aber effektive Bewegungsprogramme, die zu deinem Alltag passen. 
+                        Von Spaziergängen bis hin zu gezielten Übungen - alles ohne Überforderung.
+                    </p>
+                </div>
+                <div class="slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" 
+                         alt="Bewegung Coaching" 
+                         class="rounded-2xl shadow-2xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Block -->
+    <section class="py-16 bg-primary text-white">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6 fade-in">
-                Gesundheit beginnt im Kopf – und endet im Bauch.
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-8 fade-in">
-                Ich helfe dir, Gewicht zu verlieren, Energie zurückzugewinnen und dich endlich wieder wohl in deinem Körper zu fühlen.
-            </p>
-            <a href="#booking" class="inline-block bg-primary text-white px-8 py-4 rounded-full text-xl font-semibold hover:bg-accent transition-colors fade-in">
-                Jetzt kostenfreies Erstgespräch sichern
+            <h2 class="text-3xl font-bold mb-6 fade-in">Bereit für deine Transformation?</h2>
+            <p class="text-xl mb-8 fade-in">Starte jetzt deine Gesundheitsreise mit ärztlicher Begleitung.</p>
+            <a href="https://deinbuchungslink.de" target="_blank" 
+               class="inline-block bg-secondary text-white px-8 py-4 rounded-full text-xl font-semibold hover:bg-white hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl fade-in">
+                Jetzt Termin vereinbaren
             </a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Testimonials Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 fade-in">
-                    <img src="https://drive.google.com/file/d/1-DsEg64wgKCAHM3jbe6Sbc7BXb7aY4Xv/view?usp=sharing" 
-                         alt="Hischam El-Sobhi" 
-                         class="rounded-lg shadow-xl w-full h-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Erfolgsgeschichten unserer Klientinnen
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Testimonial Text -->
+                <div class="fade-in">
+                    <div class="bg-lightBlue p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Karin, 42 - Verwaltungsangestellte</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-primary">Problem:</h4>
+                                <p class="text-gray-600">Übergewicht, Erschöpfung, erfolglose Diäten</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Ziel:</h4>
+                                <p class="text-gray-600">Nachhaltig abnehmen und mehr Energie gewinnen</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Lösung:</h4>
+                                <p class="text-gray-600">Individueller Ernährungsplan und mentales Coaching</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-white rounded-lg">
+                            <p class="text-gray-700 italic">
+                                "Endlich habe ich eine Methode gefunden, die wirklich funktioniert. 
+                                Dr. El-Sobhi hat mir geholfen, meine Ernährung umzustellen und meine mentale Einstellung zu ändern. 
+                                Ich fühle mich wie eine neue Frau!"
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-1/2 fade-in">
-                    <h2 class="text-3xl font-bold text-primary mb-6">Wer ist Dr. Hischam El-Sobhi?</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Als erfahrener Gesundheitscoach und Experte für mentale Stärke begleite ich Menschen auf ihrem Weg zu einem gesünderen und erfüllteren Leben. Mit meiner wissenschaftlich fundierten Methode helfe ich dir, nachhaltige Veränderungen zu erreichen und dein volles Potenzial zu entfalten.
+                
+                <!-- Before/After Image -->
+                <div class="fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
+                             alt="Karin - Erfolgsgeschichte" 
+                             class="rounded-2xl shadow-2xl w-full h-auto">
+                        <div class="absolute top-4 right-4 bg-secondary text-white px-4 py-2 rounded-full font-bold">
+                            -41 kg
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-beige">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Was wir schon erreicht haben
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="text-4xl font-bold text-primary mb-2">1200+</div>
+                    <p class="text-gray-600">Frauen betreut</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-4xl font-bold text-primary mb-2">9,3/10</div>
+                    <p class="text-gray-600">Zufriedenheit</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-4xl font-bold text-primary mb-2">-12 kg</div>
+                    <p class="text-gray-600">Durchschnitt in 12 Wochen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Previous Attempts Failed -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Warum frühere Abnehmversuche gescheitert sind
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-3 fade-in">
+                        <span class="text-red-500 text-2xl">❌</span>
+                        <p class="text-gray-600">Nur kurzfristige Diäten ohne nachhaltige Wirkung</p>
+                    </div>
+                    <div class="flex items-start space-x-3 fade-in">
+                        <span class="text-red-500 text-2xl">❌</span>
+                        <p class="text-gray-600">Kein persönlicher Support und Begleitung</p>
+                    </div>
+                    <div class="flex items-start space-x-3 fade-in">
+                        <span class="text-red-500 text-2xl">❌</span>
+                        <p class="text-gray-600">Zu viel Druck, zu wenig Struktur</p>
+                    </div>
+                    <div class="flex items-start space-x-3 fade-in">
+                        <span class="text-red-500 text-2xl">❌</span>
+                        <p class="text-gray-600">Keine individuelle Anpassung an deinen Stoffwechsel</p>
+                    </div>
+                    <div class="flex items-start space-x-3 fade-in">
+                        <span class="text-red-500 text-2xl">❌</span>
+                        <p class="text-gray-600">Fokus nur auf Ernährung, nicht auf mentale Gesundheit</p>
+                    </div>
+                    <div class="flex items-start space-x-3 fade-in">
+                        <span class="text-red-500 text-2xl">❌</span>
+                        <p class="text-gray-600">Keine ärztliche Betreuung und Diagnostik</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Holistic Approach -->
+    <section class="py-20 bg-lightBlue">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Unser ganzheitlicher Ansatz
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-leaf text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Ernährung</h3>
+                    <p class="text-gray-600 text-sm">Individuelle Stoffwechselanalyse und Ernährungsplanung</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-stomach text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Darm</h3>
+                    <p class="text-gray-600 text-sm">Darmgesundheit und Mikrobiom-Optimierung</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-heartbeat text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Hormone</h3>
+                    <p class="text-gray-600 text-sm">Hormonelle Balance und Stoffwechselregulation</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-dumbbell text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Bewegung</h3>
+                    <p class="text-gray-600 text-sm">Sanfte, alltagstaugliche Bewegungsprogramme</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-brain text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Mindset</h3>
+                    <p class="text-gray-600 text-sm">Mentale Stärke und positive Verhaltensänderung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Medical Supervision -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Warum ärztliche Begleitung sinnvoll ist</h2>
+                    <div class="space-y-4 text-gray-600">
+                        <p class="text-lg">
+                            Als Arzt für Allgemeinmedizin bringe ich jahrelange Erfahrung in der Behandlung von Stoffwechselerkrankungen und Übergewicht mit.
+                        </p>
+                        <p class="text-lg">
+                            Durch moderne Diagnostik können wir die Ursachen deines Übergewichts identifizieren und gezielt behandeln.
+                        </p>
+                        <p class="text-lg">
+                            Du profitierst von medizinischer Sicherheit und einem wissenschaftlich fundierten Ansatz.
+                        </p>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <img src="bilder/Hischam Bild Anzug.png" 
+                         alt="Dr. Hischam El-Sobhi - Arzt für Allgemeinmedizin" 
+                         class="rounded-2xl shadow-2xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="py-20 bg-beige">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Das erwartet dich bei uns
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    <div class="text-center fade-in">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            1
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Onboarding</h3>
+                        <p class="text-gray-600 text-sm">Erstgespräch und Zieldefinition</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            2
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Labor</h3>
+                        <p class="text-gray-600 text-sm">Stoffwechselanalyse und Diagnostik</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            3
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Coaching</h3>
+                        <p class="text-gray-600 text-sm">Individueller Ernährungs- und Bewegungsplan</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            4
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Begleitung</h3>
+                        <p class="text-gray-600 text-sm">Regelmäßige Kontrolle und Anpassung</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                            5
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Ergebnis</h3>
+                        <p class="text-gray-600 text-sm">Nachhaltiger Erfolg und Wohlbefinden</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why You Will Succeed -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">
+                Warum auch du es schaffen wirst
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto fade-in">
+                Du brauchst keine perfekte Disziplin. Du brauchst einen Plan, der zu dir passt, 
+                die richtige Unterstützung und jemanden, der an dich glaubt. Genau das bekommst du bei uns.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="fade-in">
+                    <i class="fas fa-check-circle text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Individueller Ansatz</h3>
+                    <p>Jeder Körper ist anders - dein Plan auch</p>
+                </div>
+                <div class="fade-in">
+                    <i class="fas fa-check-circle text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Ärztliche Betreuung</h3>
+                    <p>Medizinische Sicherheit und Expertise</p>
+                </div>
+                <div class="fade-in">
+                    <i class="fas fa-check-circle text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Nachhaltiger Erfolg</h3>
+                    <p>Keine Jojo-Effekte, nur dauerhafte Veränderung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Das sind deine nächsten Schritte
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="bg-secondary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                            1
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Termin buchen</h3>
+                        <p class="text-gray-600">Kostenloses Erstgespräch vereinbaren</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="bg-secondary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                            2
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Erstgespräch</h3>
+                        <p class="text-gray-600">Kennenlernen und Zieldefinition</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="bg-secondary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                            3
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Start deiner Gesundheitsreise</h3>
+                        <p class="text-gray-600">Individueller Plan und Begleitung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="py-20 bg-lightBlue">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Über mich</h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Ich bin Dr. Hischam El-Sobhi, Arzt für Allgemeinmedizin mit Spezialisierung auf Gesundheitscoaching und nachhaltiges Abnehmen.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Nach jahrelanger Erfahrung in der Behandlung von Patienten mit Übergewicht und Stoffwechselerkrankungen habe ich eine ganzheitliche Methode entwickelt, die nicht nur auf Ernährung, sondern auch auf mentale Gesundheit und individuelle Bedürfnisse eingeht.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Mein Ziel ist es, erschöpften, übergewichtigen Frauen zu helfen, ihre Gesundheit zurückzugewinnen und ein erfülltes Leben zu führen - ohne Hunger, ohne Verzicht, aber mit nachhaltigem Erfolg.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Method Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-primary text-center mb-16 fade-in">Die Methode</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
-                    <i class="fas fa-brain text-4xl text-secondary mb-4"></i>
-                    <h3 class="text-xl font-semibold text-primary mb-3">Mentale Stärke</h3>
-                    <p class="text-gray-600">Entwicklung einer positiven Denkweise und mentaler Widerstandskraft</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
-                    <i class="fas fa-heartbeat text-4xl text-secondary mb-4"></i>
-                    <h3 class="text-xl font-semibold text-primary mb-3">Gesundheitsoptimierung</h3>
-                    <p class="text-gray-600">Ganzheitliche Betrachtung von Ernährung, Bewegung und Erholung</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
-                    <i class="fas fa-balance-scale text-4xl text-secondary mb-4"></i>
-                    <h3 class="text-xl font-semibold text-primary mb-3">Gewichtsmanagement</h3>
-                    <p class="text-gray-600">Nachhaltige Strategien für gesundes Abnehmen und Gewichtserhaltung</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
-                    <i class="fas fa-bolt text-4xl text-secondary mb-4"></i>
-                    <h3 class="text-xl font-semibold text-primary mb-3">Energieoptimierung</h3>
-                    <p class="text-gray-600">Steigerung der Vitalität und Verbesserung der Lebensqualität</p>
+                <div class="fade-in">
+                    <img src="bilder/Hischam Bild Anzug.png" 
+                         alt="Dr. Hischam El-Sobhi - Arzt für Allgemeinmedizin & Gesundheitscoach" 
+                         class="rounded-2xl shadow-2xl w-full h-auto">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- FAQ Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-primary text-center mb-16 fade-in">Das sagen meine Klienten</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg fade-in">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
-                             alt="Testimonial 1" 
-                             class="w-16 h-16 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-primary">Sarah M.</h4>
-                            <p class="text-gray-600">Berlin</p>
-                        </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
+                Häufig gestellte Fragen
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="border border-gray-200 rounded-lg fade-in">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        Muss ich Kalorien zählen?
+                        <i class="fas fa-chevron-down float-right mt-1 transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Nein, bei unserem Ansatz zählst du keine Kalorien. Wir konzentrieren uns auf die Qualität der Lebensmittel und deine individuelle Stoffwechselreaktion.</p>
                     </div>
-                    <p class="text-gray-600 italic">"Durch das Coaching habe ich nicht nur 15 Kilo abgenommen, sondern auch meine mentale Stärke zurückgewonnen."</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg fade-in">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
-                             alt="Testimonial 2" 
-                             class="w-16 h-16 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-primary">Michael K.</h4>
-                            <p class="text-gray-600">Hamburg</p>
-                        </div>
+                <div class="border border-gray-200 rounded-lg fade-in">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        Ist das Programm für Berufstätige geeignet?
+                        <i class="fas fa-chevron-down float-right mt-1 transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Ja, unser Programm ist speziell für berufstätige Frauen entwickelt. Alle Termine können flexibel vereinbart werden und die Ernährungspläne sind alltagstauglich.</p>
                     </div>
-                    <p class="text-gray-600 italic">"Die Kombination aus mentalem Training und Ernährungsberatung war genau das, was ich gebraucht habe."</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg fade-in">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" 
-                             alt="Testimonial 3" 
-                             class="w-16 h-16 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-primary">Laura S.</h4>
-                            <p class="text-gray-600">München</p>
-                        </div>
+                <div class="border border-gray-200 rounded-lg fade-in">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        Wie lange dauert das Programm?
+                        <i class="fas fa-chevron-down float-right mt-1 transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Das Programm dauert in der Regel 12 Wochen, kann aber individuell angepasst werden. Die Begleitung endet nicht abrupt - wir unterstützen dich auch danach.</p>
                     </div>
-                    <p class="text-gray-600 italic">"Endlich fühle ich mich wieder energiegeladen und fit. Das Coaching hat mein Leben verändert!"</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-primary text-center mb-16 fade-in">So läuft die Zusammenarbeit ab</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center fade-in">
-                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                        <i class="fas fa-comments text-3xl text-secondary"></i>
+                <div class="border border-gray-200 rounded-lg fade-in">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        Was kostet das Programm?
+                        <i class="fas fa-chevron-down float-right mt-1 transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Die Kosten variieren je nach individuellem Bedarf. Im kostenlosen Erstgespräch besprechen wir deine Ziele und erstellen ein maßgeschneidertes Angebot.</p>
                     </div>
-                    <h3 class="text-xl font-semibold text-primary mb-3">1. Erstgespräch</h3>
-                    <p class="text-gray-600">Kostenloses Kennenlerngespräch zur Analyse deiner Situation</p>
                 </div>
-                <div class="text-center fade-in">
-                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                        <i class="fas fa-chart-line text-3xl text-secondary"></i>
+                <div class="border border-gray-200 rounded-lg fade-in">
+                    <button class="w-full px-6 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+                        Kann ich das Programm auch online machen?
+                        <i class="fas fa-chevron-down float-right mt-1 transition-transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden">
+                        <p class="text-gray-600">Ja, alle Termine können online stattfinden. Die Laboruntersuchungen können bei dir vor Ort durchgeführt werden.</p>
                     </div>
-                    <h3 class="text-xl font-semibold text-primary mb-3">2. Analyse</h3>
-                    <p class="text-gray-600">Detaillierte Auswertung und Erstellung deines persönlichen Plans</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                        <i class="fas fa-rocket text-3xl text-secondary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mb-3">3. Umsetzung</h3>
-                    <p class="text-gray-600">Begleitung bei der Umsetzung deiner Ziele mit regelmäßigem Feedback</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="booking" class="py-20 bg-primary text-white">
+    <!-- Final CTA -->
+    <section class="py-20 bg-secondary text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6 fade-in">Bereit für deine Transformation?</h2>
-            <p class="text-xl mb-8 fade-in">Vereinbare jetzt dein kostenloses Erstgespräch und starte deinen Weg zu mehr Gesundheit und Wohlbefinden.</p>
-            <a href="https://calendly.com/placeholder" target="_blank" class="inline-block bg-white text-primary px-8 py-4 rounded-full text-xl font-semibold hover:bg-gray-100 transition-colors fade-in">
-                Gespräch vereinbaren
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">
+                Starte jetzt deine Gesundheitsrevolution!
+            </h2>
+            <p class="text-xl mb-8 fade-in">
+                Vereinbare dein kostenloses Erstgespräch und beginne deine Reise zu mehr Gesundheit und Wohlbefinden.
+            </p>
+            <a href="https://deinbuchungslink.de" target="_blank" 
+               class="inline-block bg-white text-secondary px-8 py-4 rounded-full text-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl fade-in">
+                Erstgespräch buchen
             </a>
         </div>
     </section>
@@ -208,27 +662,44 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Hischam El-Sobhi</h3>
-                    <p class="text-gray-400">Gesundheitscoaching & Mentale Stärke</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
-                    <p class="text-gray-400">Email: kontakt@hischam-elsobhi.de</p>
-                    <p class="text-gray-400">Tel: +49 (0) XXX XXX XXX</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Rechtliches</h4>
-                    <ul class="text-gray-400">
-                        <li><a href="#" class="hover:text-white">Impressum</a></li>
-                        <li><a href="#" class="hover:text-white">Datenschutz</a></li>
+                    <h3 class="text-xl font-bold mb-4">Dienstleistungen</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Gesundheitscoaching</a></li>
+                        <li><a href="#" class="hover:text-white">Ernährungsberatung online</a></li>
+                        <li><a href="#" class="hover:text-white">Abnehmen trotz Hormonstörung</a></li>
+                        <li><a href="#" class="hover:text-white">Stoffwechselanalyse</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Social Media</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+                    <h3 class="text-xl font-bold mb-4">Über</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Dr. Hischam El-Sobhi</a></li>
+                        <li><a href="#" class="hover:text-white">Unsere Methode</a></li>
+                        <li><a href="#" class="hover:text-white">Erfolgsgeschichten</a></li>
+                        <li><a href="#" class="hover:text-white">Zusammenarbeit</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Impressum</a></li>
+                        <li><a href="#" class="hover:text-white">Datenschutz</a></li>
+                        <li><a href="#" class="hover:text-white">AGB</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontakt</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Dr. Hischam El-Sobhi</p>
+                        <p>Arzt für Allgemeinmedizin</p>
+                        <p>Email: kontakt@hischam-elsobhi.de</p>
+                        <p>Tel: +49 (0) XXX XXX XXX</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -251,9 +722,23 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach((element) => {
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((element) => {
             observer.observe(element);
         });
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
     </script>
 </body>
 </html> 

@@ -10,9 +10,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1a365d', // Dunkelblau
-                        secondary: '#c4a777', // Sanftes Gold
-                        accent: '#2c5282', // Akzentblau
+                        primary: '#3b82f6', // Soft blue
+                        secondary: '#f59e0b', // Warm amber
+                        accent: '#1e40af', // Darker blue
+                        beige: '#f5f5dc', // Soft beige
+                        lightBlue: '#dbeafe', // Very light blue
                     }
                 }
             }
@@ -40,16 +42,15 @@
 </head>
 <body class="bg-white">
     <!-- Sticky Header -->
-    <header class="fixed w-full bg-white shadow-md z-50">
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-primary">Hischam El-Sobhi</a>
+            <a href="index.html" class="text-2xl font-bold text-primary">Dr. Hischam El-Sobhi</a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
                 <a href="methode.html" class="text-primary font-semibold">Methode</a>
-                <a href="zusammenarbeit.html" class="text-gray-600 hover:text-primary">Zusammenarbeit</a>
-                <a href="testimonials.html" class="text-gray-600 hover:text-primary">Erfahrungen</a>
+                <a href="zusammenarbeit.html" class="text-gray-600 hover:text-primary transition-colors">Zusammenarbeit</a>
+                <a href="testimonials.html" class="text-gray-600 hover:text-primary transition-colors">Erfahrungen</a>
             </div>
-            <a href="https://deinbuchungslink.de" target="_blank" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-accent transition-colors">
+            <a href="https://deinbuchungslink.de" target="_blank" class="bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl">
                 Termin vereinbaren
             </a>
         </nav>
