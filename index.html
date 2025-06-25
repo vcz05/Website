@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hischam El-Sobhi Coaching - Gesundheitscoaching & Mentale Stärke</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1d4ed8', // Blau
+                        secondary: '#facc15', // Gelb
+                        accent: '#2563eb', // Akzentblau
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Sticky Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Hischam El-Sobhi</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="methode.html" class="text-gray-600 hover:text-primary">Methode</a>
+                <a href="zusammenarbeit.html" class="text-gray-600 hover:text-primary">Zusammenarbeit</a>
+                <a href="testimonials.html" class="text-gray-600 hover:text-primary">Erfahrungen</a>
+            </div>
+            <a href="https://deinbuchungslink.de" target="_blank" class="bg-secondary text-primary px-6 py-2 rounded-full font-semibold hover:bg-primary hover:text-white transition-colors">
+                Termin vereinbaren
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6 fade-in">
+                Gesundheit beginnt im Kopf – und endet im Bauch.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 fade-in">
+                Ich helfe dir, Gewicht zu verlieren, Energie zurückzugewinnen und dich endlich wieder wohl in deinem Körper zu fühlen.
+            </p>
+            <a href="#booking" class="inline-block bg-primary text-white px-8 py-4 rounded-full text-xl font-semibold hover:bg-accent transition-colors fade-in">
+                Jetzt kostenfreies Erstgespräch sichern
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <img src="https://drive.google.com/file/d/1-DsEg64wgKCAHM3jbe6Sbc7BXb7aY4Xv/view?usp=sharing" 
+                         alt="Hischam El-Sobhi" 
+                         class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Wer ist Dr. Hischam El-Sobhi?</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Als erfahrener Gesundheitscoach und Experte für mentale Stärke begleite ich Menschen auf ihrem Weg zu einem gesünderen und erfüllteren Leben. Mit meiner wissenschaftlich fundierten Methode helfe ich dir, nachhaltige Veränderungen zu erreichen und dein volles Potenzial zu entfalten.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary text-center mb-16 fade-in">Die Methode</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
+                    <i class="fas fa-brain text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Mentale Stärke</h3>
+                    <p class="text-gray-600">Entwicklung einer positiven Denkweise und mentaler Widerstandskraft</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
+                    <i class="fas fa-heartbeat text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Gesundheitsoptimierung</h3>
+                    <p class="text-gray-600">Ganzheitliche Betrachtung von Ernährung, Bewegung und Erholung</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
+                    <i class="fas fa-balance-scale text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Gewichtsmanagement</h3>
+                    <p class="text-gray-600">Nachhaltige Strategien für gesundes Abnehmen und Gewichtserhaltung</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md fade-in">
+                    <i class="fas fa-bolt text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Energieoptimierung</h3>
+                    <p class="text-gray-600">Steigerung der Vitalität und Verbesserung der Lebensqualität</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary text-center mb-16 fade-in">Das sagen meine Klienten</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
+                             alt="Testimonial 1" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-primary">Sarah M.</h4>
+                            <p class="text-gray-600">Berlin</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Durch das Coaching habe ich nicht nur 15 Kilo abgenommen, sondern auch meine mentale Stärke zurückgewonnen."</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
+                             alt="Testimonial 2" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-primary">Michael K.</h4>
+                            <p class="text-gray-600">Hamburg</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Die Kombination aus mentalem Training und Ernährungsberatung war genau das, was ich gebraucht habe."</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" 
+                             alt="Testimonial 3" 
+                             class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-primary">Laura S.</h4>
+                            <p class="text-gray-600">München</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Endlich fühle ich mich wieder energiegeladen und fit. Das Coaching hat mein Leben verändert!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary text-center mb-16 fade-in">So läuft die Zusammenarbeit ab</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center fade-in">
+                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                        <i class="fas fa-comments text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">1. Erstgespräch</h3>
+                    <p class="text-gray-600">Kostenloses Kennenlerngespräch zur Analyse deiner Situation</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                        <i class="fas fa-chart-line text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">2. Analyse</h3>
+                    <p class="text-gray-600">Detaillierte Auswertung und Erstellung deines persönlichen Plans</p>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                        <i class="fas fa-rocket text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">3. Umsetzung</h3>
+                    <p class="text-gray-600">Begleitung bei der Umsetzung deiner Ziele mit regelmäßigem Feedback</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="booking" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 fade-in">Bereit für deine Transformation?</h2>
+            <p class="text-xl mb-8 fade-in">Vereinbare jetzt dein kostenloses Erstgespräch und starte deinen Weg zu mehr Gesundheit und Wohlbefinden.</p>
+            <a href="https://calendly.com/placeholder" target="_blank" class="inline-block bg-white text-primary px-8 py-4 rounded-full text-xl font-semibold hover:bg-gray-100 transition-colors fade-in">
+                Gespräch vereinbaren
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hischam El-Sobhi</h3>
+                    <p class="text-gray-400">Gesundheitscoaching & Mentale Stärke</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
+                    <p class="text-gray-400">Email: kontakt@hischam-elsobhi.de</p>
+                    <p class="text-gray-400">Tel: +49 (0) XXX XXX XXX</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Rechtliches</h4>
+                    <ul class="text-gray-400">
+                        <li><a href="#" class="hover:text-white">Impressum</a></li>
+                        <li><a href="#" class="hover:text-white">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Social Media</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html> 
