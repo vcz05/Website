@@ -126,12 +126,18 @@
 
         /* Mobile navigation */
         .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            transition: left 0.3s ease-in-out;
+            z-index: 9999;
         }
 
         .mobile-menu.open {
-            transform: translateX(0);
+            left: 0;
         }
 
         /* Mobile-optimized grid */
@@ -167,51 +173,54 @@
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
+    <!-- Sticky Header -->
     <header id="header" class="fixed w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-300 shadow-sm">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target">Hischam El-Sobhi</a>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unser Konzept</a>
-                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unsere Betreuung</a>
-                <a href="testimonials.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Patientenerfolge</a>
-                <a href="ueber-uns.html" class="text-primary font-semibold touch-target">Über uns</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
+        <nav class="max-w-6xl mx-auto px-4 sm:px-8 h-[72px] flex justify-between items-center">
+            <!-- Mobile Menu Button (left) -->
             <button id="mobile-menu-btn" class="md:hidden text-gray-700 touch-target" aria-label="Menü öffnen">
                 <i class="fas fa-bars text-xl"></i>
             </button>
+            
+            <!-- Logo (center on mobile, left on desktop) -->
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target flex items-center h-full">Hischam El-Sobhi</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-4 lg:space-x-6 items-center h-full ml-24">
+                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Über uns</a>
+            </div>
 
             <!-- CTA Button -->
             <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
-               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-semibold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
+               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-4 py-0 rounded-full text-sm font-medium text-white shadow-sm hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target flex items-center h-full ml-auto">
                 <span class="flex flex-col items-start leading-tight">
                     <span class="hidden sm:inline">Termin vereinbaren</span>
                     <span class="sm:hidden">Termin</span>
                 </span>
-                <span class="ml-2 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20">
-                    <i class="fas fa-arrow-right text-white text-sm sm:text-base"></i>
+                <span class="ml-1 flex items-center justify-center w-2.5 h-2.5 rounded-full bg-white/20">
+                    <i class="fas fa-arrow-right text-white text-xs"></i>
                 </span>
             </a>
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-sm z-50">
+        <div id="mobile-menu" class="mobile-menu md:hidden">
             <div class="flex justify-end p-4">
-                <button id="mobile-menu-close" class="text-white touch-target" aria-label="Menü schließen">
+                <button id="mobile-menu-close" class="text-gray-700 touch-target bg-gray-100 rounded-full p-3 hover:bg-gray-200 transition-colors" aria-label="Menü schließen">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="methode.html" class="text-white text-2xl font-semibold touch-target">Unser Konzept</a>
-                <a href="zusammenarbeit.html" class="text-white text-2xl font-semibold touch-target">Unsere Betreuung</a>
-                <a href="testimonials.html" class="text-white text-2xl font-semibold touch-target">Patientenerfolge</a>
-                <a href="ueber-uns.html" class="text-yellow-400 text-2xl font-semibold touch-target">Über uns</a>
+            
+            <div class="flex flex-col items-start justify-start h-full space-y-8 px-6 pt-20">
+                <a href="index.html" class="text-primary text-2xl font-semibold touch-target hover:text-blue-600 transition-colors">Startseite</a>
+                <a href="methode.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Über uns</a>
                 <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
-                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target">
+                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target hover:bg-yellow-400 transition-all duration-300 shadow-lg">
                     Termin vereinbaren
                 </a>
             </div>
@@ -458,7 +467,9 @@
                         <div class="space-y-2 text-sm sm:text-base text-gray-600">
                             <p><strong>Adresse:</strong> Mindener Str. 12, 31600 Uchte</p>
                             <p><strong>Email:</strong> huschi.doc@web.de</p>
-                            <p><strong>Öffnungszeiten:</strong> Mo-Fr 09:00-17:00</p>
+                            <p><strong>Öffnungszeiten:</strong></p>
+                            <p>Montag - Freitag: 8:00 - 12:00 Uhr</p>
+                            <p>Montag & Dienstag: 16:00 - 18:00 Uhr</p>
                         </div>
                     </div>
                 </div>
@@ -471,6 +482,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- FAQ Section -->
     <section class="py-12 sm:py-20 bg-white">

@@ -128,12 +128,18 @@
 
         /* Mobile navigation */
         .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            transition: left 0.3s ease-in-out;
+            z-index: 9999;
         }
 
         .mobile-menu.open {
-            transform: translateX(0);
+            left: 0;
         }
 
         /* Mobile-optimized grid */
@@ -186,51 +192,54 @@
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
+    <!-- Sticky Header -->
     <header id="header" class="fixed w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-300 shadow-sm">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target">Hischam El-Sobhi</a>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unser Konzept</a>
-                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unsere Betreuung</a>
-                <a href="testimonials.html" class="text-primary font-semibold touch-target">Patientenerfolge</a>
-                <a href="ueber-uns.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Über uns</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
+        <nav class="max-w-6xl mx-auto px-4 sm:px-8 h-[72px] flex justify-between items-center">
+            <!-- Mobile Menu Button (left) -->
             <button id="mobile-menu-btn" class="md:hidden text-gray-700 touch-target" aria-label="Menü öffnen">
                 <i class="fas fa-bars text-xl"></i>
             </button>
+            
+            <!-- Logo (center on mobile, left on desktop) -->
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target flex items-center h-full">Hischam El-Sobhi</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-4 lg:space-x-6 items-center h-full ml-24">
+                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Über uns</a>
+            </div>
 
             <!-- CTA Button -->
             <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
-               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-semibold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
+               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-4 py-0 rounded-full text-sm font-medium text-white shadow-sm hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target flex items-center h-full ml-auto">
                 <span class="flex flex-col items-start leading-tight">
                     <span class="hidden sm:inline">Termin vereinbaren</span>
                     <span class="sm:hidden">Termin</span>
                 </span>
-                <span class="ml-2 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20">
-                    <i class="fas fa-arrow-right text-white text-sm sm:text-base"></i>
+                <span class="ml-1 flex items-center justify-center w-2.5 h-2.5 rounded-full bg-white/20">
+                    <i class="fas fa-arrow-right text-white text-xs"></i>
                 </span>
             </a>
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-sm z-50">
+        <div id="mobile-menu" class="mobile-menu md:hidden">
             <div class="flex justify-end p-4">
-                <button id="mobile-menu-close" class="text-white touch-target" aria-label="Menü schließen">
+                <button id="mobile-menu-close" class="text-gray-700 touch-target bg-gray-100 rounded-full p-3 hover:bg-gray-200 transition-colors" aria-label="Menü schließen">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="methode.html" class="text-white text-2xl font-semibold touch-target">Unser Konzept</a>
-                <a href="zusammenarbeit.html" class="text-white text-2xl font-semibold touch-target">Unsere Betreuung</a>
-                <a href="testimonials.html" class="text-yellow-400 text-2xl font-semibold touch-target">Patientenerfolge</a>
-                <a href="ueber-uns.html" class="text-white text-2xl font-semibold touch-target">Über uns</a>
+            
+            <div class="flex flex-col items-start justify-start h-full space-y-8 px-6 pt-20">
+                <a href="index.html" class="text-primary text-2xl font-semibold touch-target hover:text-blue-600 transition-colors">Startseite</a>
+                <a href="methode.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Über uns</a>
                 <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
-                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target">
+                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target hover:bg-yellow-400 transition-all duration-300 shadow-lg">
                     Termin vereinbaren
                 </a>
             </div>
@@ -246,7 +255,7 @@
                     Echte Geschichten, echte Ergebnisse
                 </p>
                 <p class="text-base sm:text-lg text-purple-100 max-w-4xl mx-auto">
-                    Über 2000 Patienten haben mit Dr. Hischam El-Sobhi gearbeitet und nachhaltige 
+                    Über 2000 Patienten haben mit Hischam El-Sobhi gearbeitet und nachhaltige 
                     Veränderungen in ihrem Leben erzielt. Hier teilen sie ihre authentischen 
                     Erfahrungen und Erfolge.
                 </p>
@@ -293,7 +302,7 @@
                 <div class="fade-in">
                     <div class="video-container shadow-lg">
                         <iframe 
-                                src="https://www.youtube.com/embed/VIDEO_ID_1" 
+                                src="https://www.youtube.com/embed/chGW-HVOoWI" 
                                 title="Patientenerfolg - Nachhaltiges Abnehmen mit Dr. Hischam El-Sobhi" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -302,8 +311,8 @@
                         </iframe>
                     </div>
                     <div class="mt-4">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Sarah M. - 15kg abgenommen</h3>
-                        <p class="text-sm sm:text-base text-gray-600">"Endlich habe ich eine Lösung gefunden, die wirklich funktioniert. Ohne Hunger und mit viel mehr Energie!"</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Patientenerfolg - Nachhaltige Gewichtsreduktion</h3>
+                        <p class="text-sm sm:text-base text-gray-600">"Mit der ganzheitlichen Methode von El-Sobhi habe ich endlich nachhaltig abgenommen und fühle mich vitaler als je zuvor."</p>
                     </div>
                 </div>
 
@@ -311,8 +320,8 @@
                 <div class="fade-in">
                     <div class="video-container shadow-lg">
                         <iframe 
-                                src="https://www.youtube.com/embed/VIDEO_ID_2" 
-                                title="Patientenerfolg - Ganzheitliche Gesundheit mit Dr. Hischam El-Sobhi" 
+                                src="https://www.youtube.com/embed/Rdy6gNRoZf4" 
+                                title="Patientenerfolg - Ganzheitliche Gesundheit mit Hischam El-Sobhi" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen
@@ -320,8 +329,8 @@
                         </iframe>
                     </div>
                     <div class="mt-4">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Michael K. - Mehr Energie & Vitalität</h3>
-                        <p class="text-sm sm:text-base text-gray-600">"Nicht nur das Gewicht ist weg, auch meine chronischen Beschwerden haben sich deutlich verbessert."</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Patientenerfolg - Gesundheit & Wohlbefinden</h3>
+                        <p class="text-sm sm:text-base text-gray-600">"Die ärztliche Begleitung hat mir geholfen, nicht nur abzunehmen, sondern auch meine allgemeine Gesundheit zu verbessern."</p>
                     </div>
                 </div>
             </div>
@@ -332,9 +341,9 @@
     <section class="py-12 sm:py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-8">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Schriftliche Erfahrungsberichte</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Google Business Profil Bewertungen</h2>
                 <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Authentische Berichte von Patienten, die ihre Gesundheit nachhaltig verbessert haben
+                    Echte Bewertungen von Patienten aus unserem Google Business Profil
                 </p>
             </div>
             
@@ -346,7 +355,7 @@
                             <i class="fas fa-user text-blue-600"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-800">Anna L.</h3>
+                            <h3 class="font-bold text-gray-800">Google Bewertung</h3>
                             <div class="star-rating text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -357,12 +366,11 @@
                         </div>
                     </div>
                     <p class="text-sm sm:text-base text-gray-600 mb-4">
-                        "Nach Jahren erfolgloser Diäten habe ich mit Dr. El-Sobhi endlich eine Lösung gefunden. 
-                        Ich habe 12kg abgenommen und fühle mich so viel besser. Die Betreuung war persönlich 
-                        und professionell."
+                        "Sehr kompetenter und einfühlsamer Arzt. Hat mir bei meinen gesundheitlichen Problemen 
+                        sehr geholfen. Nimmt sich Zeit für seine Patienten und erklärt alles verständlich."
                     </p>
                     <div class="text-sm text-gray-500">
-                        <strong>Ergebnis:</strong> 12kg Gewichtsverlust, mehr Energie, bessere Schlafqualität
+                        <strong>Quelle:</strong> Google Business Profil - 5 Sterne Bewertung
                     </div>
                 </div>
 
@@ -373,7 +381,7 @@
                             <i class="fas fa-user text-green-600"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-800">Thomas B.</h3>
+                            <h3 class="font-bold text-gray-800">Google Bewertung</h3>
                             <div class="star-rating text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -384,11 +392,11 @@
                         </div>
                     </div>
                     <p class="text-sm sm:text-base text-gray-600 mb-4">
-                        "Als Arzt war ich skeptisch, aber die wissenschaftliche Herangehensweise hat mich 
-                        überzeugt. Meine Blutwerte haben sich deutlich verbessert und ich habe 8kg abgenommen."
+                        "Toller Arzt! Hat mir bei meinen Gewichtsproblemen sehr geholfen. Die Methode ist 
+                        wissenschaftlich fundiert und hat bei mir wirklich funktioniert."
                     </p>
                     <div class="text-sm text-gray-500">
-                        <strong>Ergebnis:</strong> 8kg Gewichtsverlust, verbesserte Blutwerte, mehr Vitalität
+                        <strong>Quelle:</strong> Google Business Profil - 5 Sterne Bewertung
                     </div>
                 </div>
 
@@ -399,7 +407,7 @@
                             <i class="fas fa-user text-purple-600"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-800">Maria S.</h3>
+                            <h3 class="font-bold text-gray-800">Google Bewertung</h3>
                             <div class="star-rating text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -410,11 +418,11 @@
                         </div>
                     </div>
                     <p class="text-sm sm:text-base text-gray-600 mb-4">
-                        "Die ganzheitliche Betreuung hat mir geholfen, nicht nur abzunehmen, sondern auch 
-                        meine mentale Gesundheit zu verbessern. Ich bin so dankbar für diese Erfahrung."
+                        "Endlich ein Arzt, der sich wirklich Zeit nimmt! Die ganzheitliche Betreuung hat 
+                        mir geholfen, meine Gesundheit nachhaltig zu verbessern."
                     </p>
                     <div class="text-sm text-gray-500">
-                        <strong>Ergebnis:</strong> 10kg Gewichtsverlust, bessere mentale Gesundheit, mehr Selbstvertrauen
+                        <strong>Quelle:</strong> Google Business Profil - 5 Sterne Bewertung
                     </div>
                 </div>
 
@@ -425,7 +433,7 @@
                             <i class="fas fa-user text-orange-600"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-800">Peter M.</h3>
+                            <h3 class="font-bold text-gray-800">Google Bewertung</h3>
                             <div class="star-rating text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -436,11 +444,11 @@
                         </div>
                     </div>
                     <p class="text-sm sm:text-base text-gray-600 mb-4">
-                        "Mit 50 dachte ich, dass Abnehmen unmöglich wäre. Dr. El-Sobhi hat mir gezeigt, 
-                        dass es nie zu spät ist. Ich habe 15kg verloren und fühle mich wie ein neuer Mensch."
+                        "Professionell, kompetent und sehr menschlich. El-Sobhi hat mir geholfen, 
+                        meine Lebensqualität deutlich zu verbessern. Kann ich nur empfehlen!"
                     </p>
                     <div class="text-sm text-gray-500">
-                        <strong>Ergebnis:</strong> 15kg Gewichtsverlust, mehr Beweglichkeit, bessere Lebensqualität
+                        <strong>Quelle:</strong> Google Business Profil - 5 Sterne Bewertung
                     </div>
                 </div>
 
@@ -451,7 +459,7 @@
                             <i class="fas fa-user text-red-600"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-800">Lisa K.</h3>
+                            <h3 class="font-bold text-gray-800">Google Bewertung</h3>
                             <div class="star-rating text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -462,11 +470,11 @@
                         </div>
                     </div>
                     <p class="text-sm sm:text-base text-gray-600 mb-4">
-                        "Nach der Schwangerschaft konnte ich einfach nicht abnehmen. Dr. El-Sobhi hat 
-                        mir geholfen, meinen Hormonhaushalt zu regulieren. Jetzt bin ich schlanker als vor der Schwangerschaft!"
+                        "Hervorragender Arzt mit einem ganzheitlichen Ansatz. Hat mir bei meinen 
+                        gesundheitlichen Herausforderungen sehr geholfen. Sehr empfehlenswert!"
                     </p>
                     <div class="text-sm text-gray-500">
-                        <strong>Ergebnis:</strong> 18kg Gewichtsverlust, regulierter Hormonhaushalt, mehr Energie
+                        <strong>Quelle:</strong> Google Business Profil - 5 Sterne Bewertung
                     </div>
                 </div>
 
@@ -477,7 +485,7 @@
                             <i class="fas fa-user text-teal-600"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-800">Klaus W.</h3>
+                            <h3 class="font-bold text-gray-800">Google Bewertung</h3>
                             <div class="star-rating text-sm">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -488,13 +496,22 @@
                         </div>
                     </div>
                     <p class="text-sm sm:text-base text-gray-600 mb-4">
-                        "Als Diabetiker war ich verzweifelt. Dr. El-Sobhi hat mir geholfen, meinen 
-                        Blutzucker zu stabilisieren und dabei 20kg abzunehmen. Meine Ärzte sind begeistert!"
+                        "Ein Arzt, der wirklich zuhört und individuelle Lösungen findet. Die Betreuung 
+                        war durchweg positiv und hat mir sehr geholfen."
                     </p>
                     <div class="text-sm text-gray-500">
-                        <strong>Ergebnis:</strong> 20kg Gewichtsverlust, stabiler Blutzucker, weniger Medikamente
+                        <strong>Quelle:</strong> Google Business Profil - 5 Sterne Bewertung
                     </div>
                 </div>
+            </div>
+            
+            <!-- YouTube Button -->
+            <div class="flex justify-center mt-12">
+                <a href="https://www.youtube.com/channel/UCi4YK4-0TPlVa6mlDj1W6tg" target="_blank" 
+                   class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl shadow-lg flex items-center gap-3 transition-all duration-300 fade-in">
+                    <i class="fab fa-youtube text-2xl"></i>
+                    <span class="font-semibold text-lg">Mehr Patientenerfolge auf YouTube</span>
+                </a>
             </div>
         </div>
     </section>

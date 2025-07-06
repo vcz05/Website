@@ -168,12 +168,18 @@
 
         /* Mobile navigation */
         .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            transition: left 0.3s ease-in-out;
+            z-index: 9999;
         }
 
         .mobile-menu.open {
-            transform: translateX(0);
+            left: 0;
         }
 
         /* Touch-friendly buttons */
@@ -218,50 +224,53 @@
 </head>
 <body class="bg-white">
     <!-- Sticky Header -->
-    <header id="header" class="fixed w-full bg-transparent backdrop-blur-sm z-50 transition-all duration-300">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target">Hischam El-Sobhi</a>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="methode.html" class="text-white hover:text-primary transition-colors touch-target">Unser Konzept</a>
-                <a href="zusammenarbeit.html" class="text-white hover:text-primary transition-colors touch-target">Unsere Betreuung</a>
-                <a href="testimonials.html" class="text-white hover:text-primary transition-colors touch-target">Patientenerfolge</a>
-                <a href="ueber-uns.html" class="text-white hover:text-primary transition-colors touch-target">Über uns</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
+    <header id="header" class="fixed w-full bg-transparent backdrop-blur-sm z-50 transition-all duration-300 top-2">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-8 h-[72px] flex justify-between items-center">
+            <!-- Mobile Menu Button (left) -->
             <button id="mobile-menu-btn" class="md:hidden text-white touch-target" aria-label="Menü öffnen">
                 <i class="fas fa-bars text-xl"></i>
             </button>
+            
+            <!-- Logo (center on mobile, left on desktop) -->
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target flex items-center h-full">Hischam El-Sobhi</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-4 lg:space-x-6 items-center h-full ml-24">
+                <a href="methode.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Über uns</a>
+            </div>
 
             <!-- CTA Button -->
             <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
-               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-semibold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
+            class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-4 py-2 rounded-full text-base font-semibold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 min-w-[0] w-auto">
                 <span class="flex flex-col items-start leading-tight">
                     <span class="hidden sm:inline">Termin vereinbaren</span>
                     <span class="sm:hidden">Termin</span>
                 </span>
-                <span class="ml-2 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20">
-                    <i class="fas fa-arrow-right text-white text-sm sm:text-base"></i>
+                <span class="ml-0.5 flex items-center justify-center w-2 h-2 rounded-full bg-white/20">
+                    <i class="fas fa-arrow-right text-white text-xs"></i>
                 </span>
             </a>
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-sm z-50">
+        <div id="mobile-menu" class="mobile-menu md:hidden">
             <div class="flex justify-end p-4">
-                <button id="mobile-menu-close" class="text-white touch-target" aria-label="Menü schließen">
+                <button id="mobile-menu-close" class="text-gray-700 touch-target bg-gray-100 rounded-full p-3 hover:bg-gray-200 transition-colors" aria-label="Menü schließen">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="methode.html" class="text-white text-2xl font-semibold touch-target">Unser Konzept</a>
-                <a href="zusammenarbeit.html" class="text-white text-2xl font-semibold touch-target">Unsere Betreuung</a>
-                <a href="testimonials.html" class="text-white text-2xl font-semibold touch-target">Patientenerfolge</a>
-                <a href="ueber-uns.html" class="text-white text-2xl font-semibold touch-target">Über uns</a>
+            
+            <div class="flex flex-col items-start justify-start h-full space-y-8 px-6 pt-20">
+                <a href="index.html" class="text-primary text-2xl font-semibold touch-target hover:text-blue-600 transition-colors">Startseite</a>
+                <a href="methode.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Über uns</a>
                 <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
-                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target">
+                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target hover:bg-yellow-400 transition-all duration-300 shadow-lg">
                     Termin vereinbaren
                 </a>
             </div>
@@ -269,7 +278,7 @@
     </header>
 
     <!-- Hero, Feature Box, Timeline Unified Section -->
-    <section class="pt-32 sm:pt-44 pb-12 sm:pb-16 bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden">
+    <section class="pt-20 sm:pt-44 pb-12 sm:pb-16 bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden">
         <!-- Dark geometric pattern -->
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 20 0 L 0 0 0 20" fill="none" stroke="%23374151" stroke-width="0.5" opacity="0.1"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100" height="100" fill="url(%23grid)"/%3E%3C/svg%3E')]"></div>
         
@@ -288,7 +297,49 @@
         <div class="absolute top-1/3 right-0 w-20 h-20 sm:w-40 sm:h-40 bg-gradient-to-br from-blue-500/25 to-cyan-500/25 rounded-full blur-3xl"></div>
         
         <div class="max-w-6xl mx-auto px-4 sm:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Mobile Layout: Content, video, then rest -->
+            <div class="lg:hidden">
+                <!-- Content first on mobile -->
+                <div class="space-y-6 sm:space-y-8 fade-in">
+                    <span class="block text-white text-sm sm:text-base md:text-lg font-semibold mb-2">Ernährungsmediziner mit mehr als 2000 Patienten und 20 Jahren Erfahrung</span>
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                        Endlich <span class="text-blue-400">nachhaltig abnehmen</span> ohne Hunger & Verzicht
+                    </h1>
+                    
+                    <!-- Video between title and description -->
+                    <div class="fade-in">
+                        <div class="video-container shadow-2xl">
+                            <iframe 
+                                    src="https://www.youtube.com/embed/85tVpmXimbo" 
+                                    title="Hischam El-Sobhi - Ärztliches Gesundheitscoaching für nachhaltiges Abnehmen" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
+                        Mit einem ganzheitlichen und ärztlich fundierten Ansatz bringst du deinen Körper ins Gleichgewicht – befreit von Heißhunger und körperlichen Beschwerden, hin zu einem Gewicht, das sich endlich leicht anfühlt
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+                           class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-semibold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-auto mx-auto sm:w-auto touch-target">
+                            <span class="flex flex-col items-start">
+                                <span>Termin vereinbaren</span>
+                                <span class="text-sm font-normal text-white/80">Kostenlos & unverbindlich</span>
+                            </span>
+                            <span class="ml-3 flex items-center justify-center w-5 h-5 rounded-full bg-white/20">
+                                <i class="fas fa-arrow-right text-white text-sm"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Layout: Content and video side by side -->
+            <div class="hidden lg:grid grid-cols-2 gap-8 lg:gap-12 items-center">
                 <!-- Left: Content -->
                 <div class="space-y-6 sm:space-y-8 fade-in">
                     <span class="block text-white text-sm sm:text-base md:text-lg font-semibold mb-2">Ernährungsmediziner mit mehr als 2000 Patienten und 20 Jahren Erfahrung</span>
@@ -316,7 +367,7 @@
                     <div class="video-container shadow-2xl">
                         <iframe 
                                 src="https://www.youtube.com/embed/85tVpmXimbo" 
-                                title="Dr. Hischam El-Sobhi - Ärztliches Gesundheitscoaching für nachhaltiges Abnehmen" 
+                                title="Hischam El-Sobhi - Ärztliches Gesundheitscoaching für nachhaltiges Abnehmen" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen
@@ -362,93 +413,109 @@
             </div>
             
             <!-- Timeline Section: Dein neues Leben mit unserer Hilfe -->
-            <div class="py-12 sm:py-16">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white mb-12 sm:mb-16 fade-in">
+            <div class="py-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16 fade-in">
                     Dein neues Leben mit unserer Hilfe
                 </h2>
                 <div class="relative w-full max-w-5xl mx-auto">
-                    <!-- Mobile Timeline -->
-                    <div class="md:hidden space-y-8">
-                        <div class="flex items-start space-x-4 slide-in-left">
-                            <div class="timeline-dot bg-primary w-4 h-4 rounded-full flex-shrink-0 mt-2"></div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-2">Erstgespräch & Analyse</h3>
-                                <p class="text-gray-300 text-sm">Wir lernen uns kennen und analysieren deine individuelle Situation</p>
+                    <svg viewBox="-100 100 1600 600" fill="none" xmlns="http://www.w3.org/2000/svg"
+     class="absolute left-0 top-0 w-full h-full z-0"
+  <path
+    d="
+      M20 80
+      C 300 80, 1100 80, 1300 80
+      Q 1450 80, 1450 200
+      Q 1450 300, 1300 300
+      C 1200 300, 600 300, 20 300Guten Tag
+      Q -130 300, -130 400
+      Q -130 480, 20 480
+      C 600 480, 1100 480, 1300 480"
+    stroke="#00AEEF"
+    stroke-width="3"
+    fill="none"
+  />
+  <!-- Pfeilspitze nach links -->
+  <polygon points="1300,480 1285,475 1285,485" fill="#00AEEF"/>
+</svg>
+
+
+
+
+
+                      
+                    </svg>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-0 relative z-10">
+                        <!-- Top Row: Woche 2, 4, 6 -->
+                        <div class="flex flex-col items-center text-center px-2 fade-in">
+                            <div class="relative mb-2">
+                                <div class="bg-white shadow-xl rounded-2xl w-20 h-20 border-2 border-yellow-400/20 flex items-center justify-center mx-auto">
+                                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f9d4.svg" alt="Bauch Icon" class="w-10 h-10">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-green-400 text-white rounded-full p-1 border-2 border-white"><i class="fas fa-check"></i></span>
                             </div>
+                            <div class="font-bold text-yellow-400 mb-1">Woche 2</div>
+                            <div class="text-gray-300 text-sm">Halte dein Wunschgewicht dauerhaft – trotz stressigem Alltag und ohne Angst vor dem Jojo-Effekt</div>
                         </div>
-                        <div class="flex items-start space-x-4 slide-in-right">
-                            <div class="timeline-dot bg-primary w-4 h-4 rounded-full flex-shrink-0 mt-2"></div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-2">Persönlicher Plan</h3>
-                                <p class="text-gray-300 text-sm">Basierend auf der Analyse entwickeln wir deinen individuellen Gesundheitsplan</p>
+                        <div class="flex flex-col items-center text-center px-2 fade-in">
+                            <div class="relative mb-2">
+                                <div class="bg-white shadow-xl rounded-2xl w-20 h-20 border-2 border-yellow-400/20 flex items-center justify-center mx-auto">
+                                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f6b7.svg" alt="Treppe Icon" class="w-10 h-10">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-green-400 text-white rounded-full p-1 border-2 border-white"><i class="fas fa-check"></i></span>
                             </div>
+                            <div class="font-bold text-yellow-400 mb-1">Woche 4</div>
+                            <div class="text-gray-300 text-sm">Bleib nie wieder schweißgebadet und mit schmerzenden Knien im Treppenhaus stehen</div>
                         </div>
-                        <div class="flex items-start space-x-4 slide-in-left">
-                            <div class="timeline-dot bg-primary w-4 h-4 rounded-full flex-shrink-0 mt-2"></div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-2">Begleitung & Umsetzung</h3>
-                                <p class="text-gray-300 text-sm">Ich begleite dich bei der Umsetzung und passe den Plan bei Bedarf an</p>
+                        <div class="flex flex-col items-center text-center px-2 fade-in">
+                            <div class="relative mb-2">
+                                <div class="bg-white shadow-xl rounded-2xl w-20 h-20 border-2 border-yellow-400/20 flex items-center justify-center mx-auto">
+                                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f457.svg" alt="Kleider Icon" class="w-10 h-10">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-green-400 text-white rounded-full p-1 border-2 border-white"><i class="fas fa-check"></i></span>
                             </div>
-                        </div>
-                        <div class="flex items-start space-x-4 slide-in-right">
-                            <div class="timeline-dot bg-primary w-4 h-4 rounded-full flex-shrink-0 mt-2"></div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-2">Nachhaltiger Erfolg</h3>
-                                <p class="text-gray-300 text-sm">Du erreichst deine Ziele und behältst sie langfristig bei</p>
-                            </div>
+                            <div class="font-bold text-yellow-400 mb-1">Woche 6</div>
+                            <div class="text-gray-300 text-sm">Kaufe dir endlich wieder die Klamotten, die dir gefallen – statt das nehmen zu müssen, was gerade so passt</div>
                         </div>
                     </div>
-                    
-                    <!-- Desktop Timeline -->
-                    <svg viewBox="-100 100 1600 600" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         class="hidden md:block absolute left-0 top-0 w-full h-full z-0">
-                        <path
-                            d="
-                              M20 80
-                              C 300 80, 1100 80, 1300 80
-                              Q 1450 80, 1450 200
-                              Q 1450 300, 1300 300
-                              C 1100 300, 300 300, 20 300
-                              Q -150 300, -150 200
-                              Q -150 100, 20 100
-                              Z"
-                            fill="url(#timelineGradient)"
-                            opacity="0.1"
-                        />
-                        <defs>
-                            <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#007BFF;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    
-                    <div class="hidden md:grid grid-cols-4 gap-8 relative z-10">
-                        <div class="text-center slide-in-left">
-                            <div class="timeline-dot bg-primary w-6 h-6 rounded-full mx-auto mb-4"></div>
-                            <h3 class="text-lg font-bold text-white mb-2">Erstgespräch & Analyse</h3>
-                            <p class="text-gray-300 text-sm">Wir lernen uns kennen und analysieren deine individuelle Situation</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-y-20 gap-x-0 mt-20 relative z-10">
+                        <!-- Bottom Row: Woche 8, 10, 12 -->
+                        <div class="flex flex-col items-center text-center px-2 fade-in">
+                            <div class="relative mb-2">
+                                <div class="bg-white shadow-xl rounded-2xl w-20 h-20 border-2 border-yellow-400/20 flex items-center justify-center mx-auto">
+                                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f6b6.svg" alt="Spaziergang Icon" class="w-10 h-10">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-green-400 text-white rounded-full p-1 border-2 border-white"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="font-bold text-yellow-400 mb-1">Woche 8</div>
+                            <div class="text-gray-300 text-sm">Mache selbst im Rentenalter noch Ausflüge mit deinen Kindern oder Enkeln – ganz ohne Atemnot oder scheuernde Schenkel</div>
                         </div>
-                        <div class="text-center slide-in-right">
-                            <div class="timeline-dot bg-primary w-6 h-6 rounded-full mx-auto mb-4"></div>
-                            <h3 class="text-lg font-bold text-white mb-2">Persönlicher Plan</h3>
-                            <p class="text-gray-300 text-sm">Basierend auf der Analyse entwickeln wir deinen individuellen Gesundheitsplan</p>
+                        <div class="flex flex-col items-center text-center px-2 fade-in">
+                            <div class="relative mb-2">
+                                <div class="bg-white shadow-xl rounded-2xl w-20 h-20 border-2 border-yellow-400/20 flex items-center justify-center mx-auto">
+                                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f319.svg" alt="Mond Icon" class="w-10 h-10">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-green-400 text-white rounded-full p-1 border-2 border-white"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="font-bold text-yellow-400 mb-1">Woche 10</div>
+                            <div class="text-gray-300 text-sm">Schlafe glücklich und entspannt ein – ohne dich schuldig zu fühlen, weil du gerade mal wieder gegen deinen Heißhunger verloren hast</div>
                         </div>
-                        <div class="text-center slide-in-left">
-                            <div class="timeline-dot bg-primary w-6 h-6 rounded-full mx-auto mb-4"></div>
-                            <h3 class="text-lg font-bold text-white mb-2">Begleitung & Umsetzung</h3>
-                            <p class="text-gray-300 text-sm">Ich begleite dich bei der Umsetzung und passe den Plan bei Bedarf an</p>
-                        </div>
-                        <div class="text-center slide-in-right">
-                            <div class="timeline-dot bg-primary w-6 h-6 rounded-full mx-auto mb-4"></div>
-                            <h3 class="text-lg font-bold text-white mb-2">Nachhaltiger Erfolg</h3>
-                            <p class="text-gray-300 text-sm">Du erreichst deine Ziele und behältst sie langfristig bei</p>
+                        <div class="flex flex-col items-center text-center px-2 fade-in">
+                            <div class="relative mb-2">
+                                <div class="bg-white shadow-xl rounded-2xl w-20 h-20 border-2 border-yellow-400/20 flex items-center justify-center mx-auto">
+                                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f60a.svg" alt="Smiley Icon" class="w-10 h-10">
+                                </div>
+                                <span class="absolute -top-2 -right-2 bg-green-400 text-white rounded-full p-1 border-2 border-white"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="font-bold text-yellow-400 mb-1">Woche 12</div>
+                            <div class="text-gray-300 text-sm">Spüre den Stolz, dein Wohlfühlgewicht endlich erreicht zu haben – trotz Hashimoto, Bluthochdruck oder Knieproblemen</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
+            
 
     <!-- Coaching Features Section -->
     <section class="py-20 bg-[#eaf6fb]">
@@ -796,34 +863,34 @@
                         <div class="flex items-center space-x-3">
                             
                            
-                        </div>
+        </div>
                         <div class="flex items-center space-x-3">
                             <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                                 <i class="fas fa-check text-white text-sm"></i>
-                            </div>
+      </div>
                             <span class="text-gray-700">Facharzt für Allgemeinmedizin und Ernährungsmedizin</span>
-                        </div>
+                </div>
                         <div class="flex items-center space-x-3">
                             <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                                 <i class="fas fa-check text-white text-sm"></i>
-                            </div>
+                </div>
                             <span class="text-gray-700">ganzheitliche Betreuung</span>
-                        </div>
+            </div>
                         <div class="flex items-center space-x-3">
                             <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                                 <i class="fas fa-check text-white text-sm"></i>
-                            </div>
+        </div>
                             <span class="text-gray-700">Nachhaltige Erfolge ohne Jojo-Effekt</span>
-                        </div>
-                    </div>
+          </div>
+          </div>
                     <div class="pt-4">
                         <a href="https://www.youtube.com/@hischam-elsobhi" target="_blank" class="inline-flex items-center space-x-2 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                             <i class="fab fa-youtube text-xl"></i>
                             <span>Patientengeschichten auf YouTube</span>
                             <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
-                    </div>
-                </div>
+          </div>
+          </div>
                 
                 <!-- Image -->
                 <div class="relative fade-in">
@@ -832,8 +899,8 @@
                     </div>
                     <div class="absolute -bottom-6 -right-6 w-full h-full bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-2xl -z-10"></div>
                 </div>
-            </div>
         </div>
+      </div>
     </section>
 
     <!-- Warum es auch bei dir klappen wird Section -->
@@ -853,7 +920,7 @@
                 <p class="text-lg text-gray-700 max-w-3xl mx-auto">
                     Du bist nicht allein mit deinen Herausforderungen. Meine bewährte Methode hat bereits Hunderten von Menschen geholfen, ihre Ziele zu erreichen.
                 </p>
-            </div>
+      </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Grund 1 -->
@@ -877,29 +944,29 @@
                 <!-- Grund 3 -->
                 <div class="bg-white rounded-2xl shadow-xl p-8 fade-in hover:shadow-2xl transition-all duration-300">
                     <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-user-md text-2xl text-white"></i>
-                    </div>
+                <i class="fas fa-user-md text-2xl text-white"></i>
+            </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Ärztliche Expertise</h3>
                     <p class="text-gray-700 text-center">Über 20 Jahre medizinische Erfahrung und Spezialisierung auf Ernährungsmedizin und Hormonstörungen.</p>
-                </div>
+        </div>
                 
                 <!-- Grund 4 -->
                 <div class="bg-white rounded-2xl shadow-xl p-8 fade-in hover:shadow-2xl transition-all duration-300">
                     <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-chart-line text-2xl text-white"></i>
-                    </div>
+    </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Bewährte Erfolge</h3>
                     <p class="text-gray-700 text-center">Hunderte von erfolgreichen Patienten mit durchschnittlich 15-25 kg Gewichtsverlust ohne Jojo-Effekt.</p>
-                </div>
+        </div>
                 
                 <!-- Grund 5 -->
                 <div class="bg-white rounded-2xl shadow-xl p-8 fade-in hover:shadow-2xl transition-all duration-300">
                     <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-clock text-2xl text-white"></i>
-                    </div>
+    </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Flexible Betreuung</h3>
                     <p class="text-gray-700 text-center">Online und vor Ort möglich - du bestimmst, wie und wann du deine Gesundheit in Angriff nimmst.</p>
-                </div>
+        </div>
                 
                 <!-- Grund 6 -->
                 <div class="bg-white rounded-2xl shadow-xl p-8 fade-in hover:shadow-2xl transition-all duration-300">
@@ -908,10 +975,10 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Ohne Risiko starten</h3>
                     <p class="text-gray-700 text-center">Kostenloses Erstgespräch ohne Verpflichtung - lerne mich und meine Methode kennen.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</div>
+</div>
+</section>
 
     <!-- Deine nächsten Schritte Section -->
     <section class="py-20 bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
@@ -938,11 +1005,11 @@
                     <div class="bg-white rounded-2xl shadow-xl p-8 text-center h-full">
                         <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
                             1
-                        </div>
+                    </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Bewerbung absenden</h3>
                         <p class="text-gray-700 mb-6">Fülle das Bewerbungsformular aus und erzähle uns von dir und deinen Zielen.</p>
                         <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto"></div>
-                    </div>
+                </div>
                 </div>
                 
                 <!-- Schritt 2 -->
@@ -954,20 +1021,20 @@
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Vorgespräch & Anamnese</h3>
                         <p class="text-gray-700 mb-6">Wir lernen uns kennen, klären deine Ausgangslage und prüfen, ob unser Programm zu dir passt.</p>
                         <div class="w-12 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto"></div>
+            </div>
                     </div>
-                </div>
-                
+        
                 <!-- Schritt 3 -->
                 <div class="relative fade-in">
                     <div class="bg-white rounded-2xl shadow-xl p-8 text-center h-full">
                         <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
                             3
-                        </div>
+                </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4">Entscheidung & Start</h3>
                         <p class="text-gray-700 mb-6">Wenn es für beide Seiten passt, legen wir gemeinsam los und starten deine Transformation.</p>
                         <div class="w-12 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+            </div>
                     </div>
-                </div>
                 
                 <!-- Schritt 4 -->
                 <div class="relative fade-in">
@@ -979,9 +1046,9 @@
                         <p class="text-gray-700 mb-6">Mit unserer Unterstützung setzt du direkt um und erreichst deine Ziele Schritt für Schritt.</p>
                         <div class="w-12 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto"></div>
                     </div>
-                </div>
             </div>
-            
+        </div>
+        
             <!-- CTA Button -->
             <div class="text-center mt-12 fade-in">
                 <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank" 
@@ -995,7 +1062,7 @@
                     </span>
                 </a>
             </div>
-        </div>
+                    </div>
     </section>
 
     <!-- Divider Section -->
@@ -1008,11 +1075,11 @@
                 </div>
                 <div class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
             </div>
-        </div>
+                    </div>
     </section>
 
 
-
+        
     <!-- About Me Section -->
     <section id="about" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden">
         <!-- Decorative background elements -->
@@ -1020,7 +1087,7 @@
             <div class="absolute top-20 right-10 w-40 h-40 bg-blue-500 rounded-full"></div>
             <div class="absolute bottom-10 left-20 w-28 h-28 bg-indigo-500 rounded-full"></div>
             <div class="absolute top-1/3 right-1/3 w-20 h-20 bg-cyan-500 rounded-full"></div>
-        </div>
+                </div>
         
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -1029,10 +1096,10 @@
                     <p class="text-lg text-gray-600 mb-4">Hischam El-Sobhi ist Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur mit über 20 Jahren medizinischer Erfahrung. Sein Studium absolvierte er an der renommierten Charité – Universitätsmedizin Berlin. Heute führt er eine eigene hausärztliche Praxis im niedersächsischen Uchte.</p>
                     <p class="text-lg text-gray-600 mb-4">Sein Ansatz vereint fundierte Schulmedizin mit ganzheitlicher Betrachtung: Neben moderner Labordiagnostik und individueller Anamnese setzt er auf Lebensstilmedizin, mentale Strategien und nachhaltige Gesundheitskonzepte.</p>
                     <p class="text-lg text-gray-600">Besonderes Augenmerk legt er auf die Begleitung bei chronischer Erschöpfung, Gewichtsproblemen und hormonellen Ungleichgewichten. Als erfahrener Coach für Ernährung und Stress unterstützt er Menschen dabei, ihre Energie zurückzugewinnen und Gesundheit ganzheitlich neu aufzubauen.</p>
-                </div>
+            </div>
                 <div class="fade-in flex justify-center">
                     <img src="Bilder/Hischam Bild Anzug.png" alt="Hischam El-Sobhi - Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
-                </div>
+                    </div>
             </div>
         </div>
     </section>
@@ -1045,7 +1112,7 @@
           <div class="bg-[#f3f4f6] rounded-xl shadow p-6">
             <h3 class="font-semibold text-lg text-primary mb-2">Wie läuft das Erstgespräch ab?</h3>
             <p class="text-gray-800">Im Erstgespräch lernen wir uns kennen, besprechen deine Ziele und klären, wie ich dich am besten unterstützen kann. Es ist unverbindlich und kostenfrei.</p>
-          </div>
+    </div>
           <div class="bg-[#f3f4f6] rounded-xl shadow p-6">
             <h3 class="font-semibold text-lg text-primary mb-2">Brauche ich für das Coaching eine Überweisung?</h3>
             <p class="text-gray-800">Nein, du kannst dich direkt bei mir melden – ganz ohne Überweisung oder bürokratischen Aufwand.</p>
@@ -1093,9 +1160,9 @@
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop" alt="Gesundheitscoaching" class="w-full max-w-sm h-64 object-cover rounded-2xl shadow-xl">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+</div>
+</div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-12">
@@ -1169,6 +1236,9 @@
         const header = document.getElementById('header');
         const navLinks = document.querySelectorAll('nav a:not([target="_blank"])');
         const logo = document.querySelector('nav a[href="index.html"]');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
         
         function updateHeader() {
             if (window.scrollY > 50) {
@@ -1180,6 +1250,9 @@
                     link.classList.add('text-gray-700');
                 });
                 logo.classList.add('text-gray-900');
+                // Dark hamburger menu icon
+                mobileMenuBtn.classList.remove('text-white');
+                mobileMenuBtn.classList.add('text-gray-900');
             } else {
                 header.classList.remove('bg-white/95', 'shadow-sm');
                 header.classList.add('bg-transparent');
@@ -1189,18 +1262,53 @@
                     link.classList.add('text-white');
                 });
                 logo.classList.remove('text-gray-900');
+                // White hamburger menu icon
+                mobileMenuBtn.classList.remove('text-gray-900');
+                mobileMenuBtn.classList.add('text-white');
             }
         }
         
         window.addEventListener('scroll', updateHeader);
         updateHeader(); // Initial call
 
+        // Mobile menu functionality
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                console.log('Mobile menu opened');
+            });
+
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = 'auto';
+                console.log('Mobile menu closed');
+            });
+
+            // Close menu when clicking on links
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.remove('open');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
         // Fade-in animation on scroll
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
         }, observerOptions);
-        document.querySelectorAll('.fade-in').forEach((element) => { observer.observe(element); });
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((element) => { observer.observe(element); });
 
         // Count-up animation for stats
         document.querySelectorAll('.countup').forEach(function(el) {
@@ -1217,64 +1325,6 @@
                 }
             }
             update();
-        });
-    </script>
-
-    <!-- Mobile Menu JavaScript -->
-    <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-
-        mobileMenuClose.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close menu when clicking on links
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = 'auto';
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((element) => {
-            observer.observe(element);
-        });
-
-        // Header background on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('bg-white/95');
-                header.classList.remove('bg-transparent');
-            } else {
-                header.classList.remove('bg-white/95');
-                header.classList.add('bg-transparent');
-            }
         });
     </script>
 </body>

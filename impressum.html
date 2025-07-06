@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impressum - Hischam El-Sobhi</title>
+    <meta name="description" content="Impressum und rechtliche Informationen von ZFG Zentrum für Gesundheit - Hischam El-Sobhi">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -25,30 +26,93 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Mobile navigation */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            transition: left 0.3s ease-in-out;
+            z-index: 9999;
+        }
+
+        .mobile-menu.open {
+            left: 0;
+        }
+
+        /* Touch targets for mobile */
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-6xl mx-auto px-8 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-900">Hischam El-Sobhi</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors">Methode</a>
-                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors">Zusammenarbeit</a>
-                <a href="testimonials.html" class="text-gray-700 hover:text-primary transition-colors">Erfahrungen</a>
-                <a href="index.html#about" class="text-gray-700 hover:text-primary transition-colors">Über uns</a>
+    <!-- Sticky Header -->
+    <header id="header" class="fixed w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-300 shadow-sm">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-8 h-[72px] flex justify-between items-center">
+            <!-- Mobile Menu Button (left) -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 touch-target" aria-label="Menü öffnen">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            
+            <!-- Logo (center on mobile, left on desktop) -->
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target flex items-center h-full">Hischam El-Sobhi</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-4 lg:space-x-6 items-center h-full ml-24">
+                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-700 hover:text-primary transition-colors touch-target flex items-center h-full">Über uns</a>
             </div>
+
+            <!-- CTA Button -->
+            <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-4 py-0 rounded-full text-sm font-medium text-white shadow-sm hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target flex items-center h-full ml-auto">
+                <span class="flex flex-col items-start leading-tight">
+                    <span class="hidden sm:inline">Termin vereinbaren</span>
+                    <span class="sm:hidden">Termin</span>
+                </span>
+                <span class="ml-1 flex items-center justify-center w-2.5 h-2.5 rounded-full bg-white/20">
+                    <i class="fas fa-arrow-right text-white text-xs"></i>
+                </span>
+            </a>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div class="flex justify-end p-4">
+                <button id="mobile-menu-close" class="text-gray-700 touch-target bg-gray-100 rounded-full p-3 hover:bg-gray-200 transition-colors" aria-label="Menü schließen">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col items-start justify-start h-full space-y-8 px-6 pt-20">
+                <a href="index.html" class="text-primary text-2xl font-semibold touch-target hover:text-blue-600 transition-colors">Startseite</a>
+                <a href="methode.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Über uns</a>
+                <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target hover:bg-yellow-400 transition-all duration-300 shadow-lg">
+                    Termin vereinbaren
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-8 py-12">
-        <h1 class="text-3xl font-bold text-gray-900 mb-8">Impressum</h1>
+    <main class="max-w-4xl mx-auto px-4 sm:px-8 py-12 sm:py-16 pt-32 sm:pt-32">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Impressum</h1>
         
-        <div class="space-y-8">
+        <div class="space-y-6 sm:space-y-8">
             <section>
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Firmensitz:</h2>
-                <div class="bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Firmensitz:</h2>
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
                     <p class="text-gray-700 mb-2"><strong>ZFG Zentrum für Gesundheit</strong></p>
                     <p class="text-gray-700 mb-2"><strong>Hischam El-Sobhi</strong></p>
                     <p class="text-gray-700 mb-2">Mindener Str. 12</p>
@@ -57,28 +121,28 @@
             </section>
 
             <section>
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Kontakt:</h2>
-                <div class="bg-gray-50 p-6 rounded-lg space-y-2">
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Kontakt:</h2>
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg space-y-2">
                     <p class="text-gray-700"><strong>Telefon:</strong></p>
-                    <p class="text-gray-700"><strong>E-Mail:</strong></p>
-                    <p class="text-gray-700"><strong>USt-ID:</strong></p>
+                    <p class="text-gray-700"><strong>E-Mail:</strong> huschi.doc@web.de</p>
+                    <p class="text-gray-700"><strong>USt-ID:</strong> DE293227542</p>
                     <p class="text-gray-700"><strong>Steuernummer:</strong></p>
                 </div>
             </section>
 
             <section>
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Verantwortlich für den Inhalt:</h2>
-                <div class="bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Verantwortlich für den Inhalt:</h2>
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg">
                     <p class="text-gray-700"><strong>Hischam El-Sobhi</strong></p>
                 </div>
             </section>
 
             <section>
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Streitschlichtung</h2>
-                <div class="bg-gray-50 p-6 rounded-lg space-y-4">
-                    <p class="text-gray-700">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit.</p>
-                    <p class="text-gray-700">Unsere E-Mail-Adresse finden Sie oberhalb im Bereich "Impressum".</p>
-                    <p class="text-gray-700">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Streitschlichtung</h2>
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-lg space-y-3 sm:space-y-4">
+                    <p class="text-gray-700 text-sm sm:text-base">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit.</p>
+                    <p class="text-gray-700 text-sm sm:text-base">Unsere E-Mail-Adresse finden Sie oberhalb im Bereich "Impressum".</p>
+                    <p class="text-gray-700 text-sm sm:text-base">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
                 </div>
             </section>
         </div>
@@ -86,9 +150,128 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-8 mt-12">
-        <div class="max-w-6xl mx-auto px-8 text-center">
-            <p class="text-gray-400">&copy; 2024 ZFG Zentrum für Gesundheit - Hischam El-Sobhi. Alle Rechte vorbehalten.</p>
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Dienstleistung -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Dienstleistung</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="methode.html" class="hover:text-white transition-colors">Unser Konzept</a></li>
+                        <li><a href="zusammenarbeit.html" class="hover:text-white transition-colors">Unsere Betreuung</a></li>
+                        <li><a href="testimonials.html" class="hover:text-white transition-colors">Patientenerfolge</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Über -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Über</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="ueber-uns.html" class="hover:text-white transition-colors">Über uns</a></li>
+                        <li><a href="impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Kontakt -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p>ZFG Zentrum für Gesundheit</p>
+                        <p>Hischam El-Sobhi</p>
+                        <p>Mindener Str. 12</p>
+                        <p>31600 Uchte</p>
+                        <p>E-Mail: huschi.doc@web.de</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Media & CTA -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+                           class="bg-yellow-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-yellow-400 transition-all duration-300">
+                            Termin vereinbaren
+                        </a>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">NEU</span>
+                        <span class="text-gray-400 text-sm">360° Balance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-6 mt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 ZFG Zentrum für Gesundheit - Hischam El-Sobhi. Alle Rechte vorbehalten.</p>
+                <p class="text-gray-500 text-xs mt-2">
+                    Facebook Disclaimer | Rechtliche Hinweise | Diese Website dient ausschließlich Informationszwecken und stellt keine medizinische Beratung dar. 
+                    Bei gesundheitlichen Beschwerden konsultieren Sie bitte einen Arzt.
+                </p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const header = document.getElementById('header');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        });
+
+        // Hamburger icon color change on scroll
+        window.addEventListener('scroll', function() {
+            const hamburgerIcon = mobileMenuBtn.querySelector('i');
+            if (window.scrollY > 50) {
+                hamburgerIcon.style.color = '#000000';
+            } else {
+                hamburgerIcon.style.color = '#374151';
+            }
+        });
+    </script>
 </body>
 </html> 
