@@ -3,19 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erfahrungen & Erfolgsgeschichten - Dr. Hischam El-Sobhi Coaching</title>
-    <meta name="description" content="Echte Erfolgsgeschichten unserer Klientinnen. Nachhaltiges Abnehmen ohne Hunger & Verzicht. Jetzt Erstgespräch buchen.">
+    <title>Patientenerfolge | Hischam El-Sobhi - Echte Erfahrungsberichte</title>
+    <meta name="description" content="Echte Patientenerfolge und Erfahrungsberichte: Über 2000 Patienten haben mit Hischam El-Sobhi nachhaltig abgenommen. Lesen Sie authentische Geschichten.">
+    <meta name="keywords" content="Patientenerfolge, Erfahrungsberichte, Abnehmen, Hischam El-Sobhi, echte Patienten, Erfolgsgeschichten, Gesundheitscoaching">
+    <meta name="author" content="Hischam El-Sobhi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hischamelsobhi.de/testimonials.html">
+    <meta property="og:title" content="Patientenerfolge - Hischam El-Sobhi">
+    <meta property="og:description" content="Echte Patientenerfolge und Erfahrungsberichte für nachhaltige Gesundheit.">
+    <meta property="og:image" content="https://hischamelsobhi.de/Bilder/Team.JPG">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hischamelsobhi.de/testimonials.html">
+    <meta property="twitter:title" content="Patientenerfolge - Hischam El-Sobhi">
+    <meta property="twitter:description" content="Echte Patientenerfolge und Erfahrungsberichte für nachhaltige Gesundheit.">
+    <meta property="twitter:image" content="https://hischamelsobhi.de/Bilder/Team.JPG">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hischamelsobhi.de/testimonials.html">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Patientenerfolge - Hischam El-Sobhi",
+        "description": "Echte Patientenerfolge und Erfahrungsberichte für nachhaltige Gesundheit",
+        "url": "https://hischamelsobhi.de/testimonials.html",
+        "mainEntity": {
+            "@type": "Review",
+            "itemReviewed": {
+                "@type": "MedicalBusiness",
+                "name": "ZFG Zentrum für Gesundheit - Hischam El-Sobhi"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Patienten von Hischam El-Sobhi"
+            },
+            "reviewBody": "Über 2000 Patienten haben erfolgreich mit Hischam El-Sobhi gearbeitet und nachhaltige Ergebnisse erzielt."
+        }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6', // Soft blue
-                        secondary: '#f59e0b', // Warm amber
-                        accent: '#1e40af', // Darker blue
-                        beige: '#f5f5dc', // Soft beige
-                        lightBlue: '#dbeafe', // Very light blue
+                        primary: '#007BFF',
+                        secondary: '#f5f7fa',
+                        accent: '#0056b3',
+                        beige: '#f8fafc',
+                        error: '#ef4444',
+                        dark: '#0a1931',
                     }
                 }
             }
@@ -24,356 +80,537 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
+        body { 
             font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Mobile-first animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Touch-friendly elements */
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        /* Mobile navigation */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Mobile-optimized grid */
+        @media (max-width: 640px) {
+            .mobile-stack {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Performance optimizations */
+        .will-change-transform {
+            will-change: transform;
+        }
+
+        .will-change-opacity {
+            will-change: opacity;
+        }
+
+        /* Testimonial card hover effects */
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Star rating */
+        .star-rating {
+            color: #fbbf24;
+        }
+
+        /* Video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Sticky Header -->
-    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-primary">Dr. Hischam El-Sobhi</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="methode.html" class="text-gray-600 hover:text-primary transition-colors">Methode</a>
-                <a href="zusammenarbeit.html" class="text-gray-600 hover:text-primary transition-colors">Zusammenarbeit</a>
-                <a href="testimonials.html" class="text-primary font-semibold">Erfahrungen</a>
+    <!-- Header -->
+    <header id="header" class="fixed w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-300 shadow-sm">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target">Hischam El-Sobhi</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-primary font-semibold touch-target">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Über uns</a>
             </div>
-            <a href="https://deinbuchungslink.de" target="_blank" class="bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl">
-                Termin vereinbaren
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 touch-target" aria-label="Menü öffnen">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- CTA Button -->
+            <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-semibold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
+                <span class="flex flex-col items-start leading-tight">
+                    <span class="hidden sm:inline">Termin vereinbaren</span>
+                    <span class="sm:hidden">Termin</span>
+                </span>
+                <span class="ml-2 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20">
+                    <i class="fas fa-arrow-right text-white text-sm sm:text-base"></i>
+                </span>
             </a>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-sm z-50">
+            <div class="flex justify-end p-4">
+                <button id="mobile-menu-close" class="text-white touch-target" aria-label="Menü schließen">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="methode.html" class="text-white text-2xl font-semibold touch-target">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-white text-2xl font-semibold touch-target">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-yellow-400 text-2xl font-semibold touch-target">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-white text-2xl font-semibold touch-target">Über uns</a>
+                <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target">
+                    Termin vereinbaren
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-gradient-to-br from-lightBlue to-white">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 fade-in">
-                Echte <span class="text-primary">Erfolgsgeschichten</span>
-            </h1>
-            <p class="text-xl text-gray-600 mb-8 fade-in">
-                Das sagen unsere Klientinnen über ihre Transformation
-            </p>
+    <section class="relative bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white pt-32 sm:pt-32 pb-16 sm:pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Patientenerfolge</h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto">
+                    Echte Geschichten, echte Ergebnisse
+                </p>
+                <p class="text-base sm:text-lg text-purple-100 max-w-4xl mx-auto">
+                    Über 2000 Patienten haben mit Dr. Hischam El-Sobhi gearbeitet und nachhaltige 
+                    Veränderungen in ihrem Leben erzielt. Hier teilen sie ihre authentischen 
+                    Erfahrungen und Erfolge.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Featured Testimonials -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Stats Section -->
+    <section class="py-12 sm:py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2 countup">2000+</div>
+                    <p class="text-sm sm:text-base text-gray-600">Zufriedene Patienten</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2 countup">20+</div>
+                    <p class="text-sm sm:text-base text-gray-600">Jahre Erfahrung</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2 countup">95%</div>
+                    <p class="text-sm sm:text-base text-gray-600">Erfolgsquote</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2 countup">5.0</div>
+                    <p class="text-sm sm:text-base text-gray-600">Sterne Bewertung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials Section -->
+    <section class="py-12 sm:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Video-Erfahrungsberichte</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Hören Sie direkt von unseren Patienten, wie sie ihre Ziele erreicht haben
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Video 1 -->
+                <div class="fade-in">
+                    <div class="video-container shadow-lg">
+                        <iframe 
+                                src="https://www.youtube.com/embed/VIDEO_ID_1" 
+                                title="Patientenerfolg - Nachhaltiges Abnehmen mit Dr. Hischam El-Sobhi" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Sarah M. - 15kg abgenommen</h3>
+                        <p class="text-sm sm:text-base text-gray-600">"Endlich habe ich eine Lösung gefunden, die wirklich funktioniert. Ohne Hunger und mit viel mehr Energie!"</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="fade-in">
+                    <div class="video-container shadow-lg">
+                        <iframe 
+                                src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                                title="Patientenerfolg - Ganzheitliche Gesundheit mit Dr. Hischam El-Sobhi" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Michael K. - Mehr Energie & Vitalität</h3>
+                        <p class="text-sm sm:text-base text-gray-600">"Nicht nur das Gewicht ist weg, auch meine chronischen Beschwerden haben sich deutlich verbessert."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Written Testimonials Section -->
+    <section class="py-12 sm:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Schriftliche Erfahrungsberichte</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Authentische Berichte von Patienten, die ihre Gesundheit nachhaltig verbessert haben
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-lightBlue p-8 rounded-2xl shadow-lg fade-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
-                             alt="Sarah M." 
-                             class="w-20 h-20 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-900">Sarah M.</h3>
-                            <p class="text-gray-600">42 Jahre, Verwaltungsangestellte</p>
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 testimonial-card slide-in-left">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Anna L.</h3>
+                            <div class="star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="space-y-4 mb-6">
-                        <div>
-                            <h4 class="font-semibold text-primary">Problem:</h4>
-                            <p class="text-gray-600">Übergewicht, Erschöpfung, erfolglose Diäten</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Ziel:</h4>
-                            <p class="text-gray-600">Nachhaltig abnehmen und mehr Energie gewinnen</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Lösung:</h4>
-                            <p class="text-gray-600">Individueller Ernährungsplan und mentales Coaching</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Endlich habe ich eine Methode gefunden, die wirklich funktioniert. 
-                        Dr. El-Sobhi hat mir geholfen, meine Ernährung umzustellen und meine mentale Einstellung zu ändern. 
-                        Ich fühle mich wie eine neue Frau!"
+                    <p class="text-sm sm:text-base text-gray-600 mb-4">
+                        "Nach Jahren erfolgloser Diäten habe ich mit Dr. El-Sobhi endlich eine Lösung gefunden. 
+                        Ich habe 12kg abgenommen und fühle mich so viel besser. Die Betreuung war persönlich 
+                        und professionell."
                     </p>
-                    <div class="flex items-center mt-4">
-                        <div class="flex text-secondary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                    <div class="text-sm text-gray-500">
+                        <strong>Ergebnis:</strong> 12kg Gewichtsverlust, mehr Energie, bessere Schlafqualität
                     </div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-lightBlue p-8 rounded-2xl shadow-lg fade-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
-                             alt="Michael K." 
-                             class="w-20 h-20 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-900">Michael K.</h3>
-                            <p class="text-gray-600">38 Jahre, Projektmanager</p>
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Thomas B.</h3>
+                            <div class="star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="space-y-4 mb-6">
-                        <div>
-                            <h4 class="font-semibold text-primary">Problem:</h4>
-                            <p class="text-gray-600">Stressbedingtes Übergewicht, Burnout-Gefahr</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Ziel:</h4>
-                            <p class="text-gray-600">Gewicht reduzieren und Stressmanagement lernen</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Lösung:</h4>
-                            <p class="text-gray-600">Ganzheitlicher Ansatz mit Fokus auf Work-Life-Balance</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Die Kombination aus mentalem Training und Ernährungsberatung war genau das, was ich gebraucht habe. 
-                        Endlich fühle ich mich wieder energiegeladen und fit."
+                    <p class="text-sm sm:text-base text-gray-600 mb-4">
+                        "Als Arzt war ich skeptisch, aber die wissenschaftliche Herangehensweise hat mich 
+                        überzeugt. Meine Blutwerte haben sich deutlich verbessert und ich habe 8kg abgenommen."
                     </p>
-                    <div class="flex items-center mt-4">
-                        <div class="flex text-secondary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                    <div class="text-sm text-gray-500">
+                        <strong>Ergebnis:</strong> 8kg Gewichtsverlust, verbesserte Blutwerte, mehr Vitalität
                     </div>
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-lightBlue p-8 rounded-2xl shadow-lg fade-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" 
-                             alt="Laura S." 
-                             class="w-20 h-20 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-900">Laura S.</h3>
-                            <p class="text-gray-600">35 Jahre, Lehrerin</p>
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 testimonial-card slide-in-right">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Maria S.</h3>
+                            <div class="star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="space-y-4 mb-6">
-                        <div>
-                            <h4 class="font-semibold text-primary">Problem:</h4>
-                            <p class="text-gray-600">Hormonelle Störungen, Gewichtszunahme</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Ziel:</h4>
-                            <p class="text-gray-600">Hormonelle Balance und Gewichtsreduktion</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Lösung:</h4>
-                            <p class="text-gray-600">Hormonelle Diagnostik und angepasste Ernährung</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Endlich fühle ich mich wieder energiegeladen und fit. Das Coaching hat mein Leben verändert! 
-                        Die hormonelle Diagnostik war der Schlüssel zum Erfolg."
+                    <p class="text-sm sm:text-base text-gray-600 mb-4">
+                        "Die ganzheitliche Betreuung hat mir geholfen, nicht nur abzunehmen, sondern auch 
+                        meine mentale Gesundheit zu verbessern. Ich bin so dankbar für diese Erfahrung."
                     </p>
-                    <div class="flex items-center mt-4">
-                        <div class="flex text-secondary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                    <div class="text-sm text-gray-500">
+                        <strong>Ergebnis:</strong> 10kg Gewichtsverlust, bessere mentale Gesundheit, mehr Selbstvertrauen
                     </div>
                 </div>
 
                 <!-- Testimonial 4 -->
-                <div class="bg-lightBlue p-8 rounded-2xl shadow-lg fade-in">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" 
-                             alt="Thomas R." 
-                             class="w-20 h-20 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h3 class="text-xl font-bold text-gray-900">Thomas R.</h3>
-                            <p class="text-gray-600">45 Jahre, Unternehmer</p>
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 testimonial-card slide-in-left">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-orange-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Peter M.</h3>
+                            <div class="star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="space-y-4 mb-6">
-                        <div>
-                            <h4 class="font-semibold text-primary">Problem:</h4>
-                            <p class="text-gray-600">Jahrelanger Kampf mit Übergewicht</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Ziel:</h4>
-                            <p class="text-gray-600">Endlich nachhaltig abnehmen</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-primary">Lösung:</h4>
-                            <p class="text-gray-600">Stoffwechselanalyse und individueller Plan</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Nach jahrelangem Kampf mit meinem Gewicht habe ich endlich eine Methode gefunden, die wirklich funktioniert. 
-                        Die Kombination aus mentalem Training und Ernährungsberatung war der Schlüssel zum Erfolg."
+                    <p class="text-sm sm:text-base text-gray-600 mb-4">
+                        "Mit 50 dachte ich, dass Abnehmen unmöglich wäre. Dr. El-Sobhi hat mir gezeigt, 
+                        dass es nie zu spät ist. Ich habe 15kg verloren und fühle mich wie ein neuer Mensch."
                     </p>
-                    <div class="flex items-center mt-4">
-                        <div class="flex text-secondary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories -->
-    <section class="py-20 bg-beige">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
-                Erfolgsgeschichten im Detail
-            </h2>
-            <div class="max-w-4xl mx-auto">
-                <!-- Story 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg mb-12 fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Von Erschöpfung zu neuer Energie</h3>
-                    <p class="text-gray-600 mb-6">
-                        "Als ich zu Dr. El-Sobhi kam, war ich völlig erschöpft und hatte das Gefühl, mein Leben nicht mehr im Griff zu haben. 
-                        Durch das Coaching habe ich gelernt, wie ich meine Energie besser einteile und meine mentale Stärke zurückgewinnen kann. 
-                        Heute fühle ich mich fitter und ausgeglichener als je zuvor."
-                    </p>
-                    <div class="flex items-center">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
-                             alt="Sarah M." 
-                             class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-primary">Sarah M.</h4>
-                            <p class="text-gray-600">Berlin</p>
-                        </div>
+                    <div class="text-sm text-gray-500">
+                        <strong>Ergebnis:</strong> 15kg Gewichtsverlust, mehr Beweglichkeit, bessere Lebensqualität
                     </div>
                 </div>
 
-                <!-- Story 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg fade-in">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Der Weg zu einem gesünderen Leben</h3>
-                    <p class="text-gray-600 mb-6">
-                        "Das Coaching mit Dr. El-Sobhi hat mir geholfen, meine Ernährungsgewohnheiten grundlegend zu ändern und ein neues Verhältnis zu meinem Körper aufzubauen. 
-                        Die Kombination aus praktischen Tipps und mentalem Training war genau das, was ich gebraucht habe."
-                    </p>
-                    <div class="flex items-center">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
-                             alt="Michael K." 
-                             class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-primary">Michael K.</h4>
-                            <p class="text-gray-600">Hamburg</p>
+                <!-- Testimonial 5 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-red-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Lisa K.</h3>
+                            <div class="star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
+                    <p class="text-sm sm:text-base text-gray-600 mb-4">
+                        "Nach der Schwangerschaft konnte ich einfach nicht abnehmen. Dr. El-Sobhi hat 
+                        mir geholfen, meinen Hormonhaushalt zu regulieren. Jetzt bin ich schlanker als vor der Schwangerschaft!"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <strong>Ergebnis:</strong> 18kg Gewichtsverlust, regulierter Hormonhaushalt, mehr Energie
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Statistics Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 fade-in">
-                Was wir schon erreicht haben
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="fade-in">
-                    <div class="text-5xl font-bold text-primary mb-2">1200+</div>
-                    <p class="text-gray-600">Frauen betreut</p>
-                </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold text-primary mb-2">9,3/10</div>
-                    <p class="text-gray-600">Zufriedenheit</p>
-                </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold text-primary mb-2">-12 kg</div>
-                    <p class="text-gray-600">Durchschnitt in 12 Wochen</p>
+                <!-- Testimonial 6 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 testimonial-card slide-in-right">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-teal-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Klaus W.</h3>
+                            <div class="star-rating text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 mb-4">
+                        "Als Diabetiker war ich verzweifelt. Dr. El-Sobhi hat mir geholfen, meinen 
+                        Blutzucker zu stabilisieren und dabei 20kg abzunehmen. Meine Ärzte sind begeistert!"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <strong>Ergebnis:</strong> 20kg Gewichtsverlust, stabiler Blutzucker, weniger Medikamente
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6 fade-in">Bereit für deine Erfolgsgeschichte?</h2>
-            <p class="text-xl mb-8 fade-in">Starte jetzt deine persönliche Transformation.</p>
-            <a href="https://deinbuchungslink.de" target="_blank" 
-               class="inline-block bg-secondary text-white px-8 py-4 rounded-full text-xl font-semibold hover:bg-white hover:text-primary transition-all duration-300 shadow-lg hover:shadow-xl fade-in">
-                Gespräch vereinbaren
+    <section class="py-12 sm:py-20 bg-gradient-to-r from-purple-600 to-purple-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Bereit für Ihre Erfolgsgeschichte?</h2>
+            <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-purple-100">
+                Werden Sie Teil unserer Erfolgsgeschichten. Vereinbaren Sie jetzt Ihr kostenloses 
+                Erstgespräch und starten Sie Ihren Weg zu mehr Gesundheit und Wohlbefinden.
+            </p>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+               class="inline-block bg-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-yellow-400 transition-all duration-300 shadow-lg touch-target">
+                Jetzt kostenloses Erstgespräch buchen
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-dark text-white py-12 mt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-8">
+                <!-- Dienstleistung -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Dienstleistungen</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Gesundheitscoaching</a></li>
-                        <li><a href="#" class="hover:text-white">Ernährungsberatung online</a></li>
-                        <li><a href="#" class="hover:text-white">Abnehmen trotz Hormonstörung</a></li>
-                        <li><a href="#" class="hover:text-white">Stoffwechselanalyse</a></li>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-100">Dienstleistung</h3>
+                    <ul class="space-y-2 text-base sm:text-lg">
+                        <li><a href="testimonials.html" class="font-semibold hover:text-yellow-400 transition-colors touch-target">Kundenerfolge</a></li>
+                        <li><a href="testimonials.html" class="hover:text-yellow-400 transition-colors touch-target">Erfahrungen</a></li>
+                        <li><a href="zusammenarbeit.html" class="hover:text-yellow-400 transition-colors touch-target">Unsere Betreuung</a></li>
+                        <li><a href="methode.html" class="hover:text-yellow-400 transition-colors touch-target">Unser Konzept</a></li>
+                        <li>
+                            <a href="https://hischamelsobhi.de" class="hover:text-yellow-400 transition-colors font-semibold touch-target">Das Buch "360° Balance"
+                                <span class="ml-2 align-middle inline-block bg-gray-700 text-xs text-green-200 font-bold px-2 py-0.5 rounded">NEU</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                <!-- Über -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Über</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Dr. Hischam El-Sobhi</a></li>
-                        <li><a href="#" class="hover:text-white">Unsere Methode</a></li>
-                        <li><a href="#" class="hover:text-white">Erfolgsgeschichten</a></li>
-                        <li><a href="#" class="hover:text-white">Zusammenarbeit</a></li>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-100">Über</h3>
+                    <ul class="space-y-2 text-base sm:text-lg">
+                        <li><a href="index.html" class="hover:text-yellow-400 transition-colors touch-target">Startseite</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors touch-target">Karriere</a></li>
+                        <li><a href="ueber-uns.html" class="hover:text-yellow-400 transition-colors touch-target">Über uns</a></li>
+                        <li><a href="impressum.html" class="hover:text-yellow-400 transition-colors touch-target">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-yellow-400 transition-colors touch-target">Datenschutz</a></li>
                     </ul>
                 </div>
+                <!-- Kontakt -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Info</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Impressum</a></li>
-                        <li><a href="#" class="hover:text-white">Datenschutz</a></li>
-                        <li><a href="#" class="hover:text-white">AGB</a></li>
-                        <li><a href="#" class="hover:text-white">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Kontakt</h3>
-                    <div class="space-y-2 text-gray-400">
-                        <p>Dr. Hischam El-Sobhi</p>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Kontakt</h3>
+                    <div class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <p>Hischam El-Sobhi</p>
                         <p>Arzt für Allgemeinmedizin</p>
-                        <p>Email: kontakt@hischam-elsobhi.de</p>
-                        <p>Tel: +49 (0) XXX XXX XXX</p>
-                        <div class="flex space-x-4 mt-4">
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-2xl"></i></a>
+                        <p>Email: huschi.doc@web.de</p>
+                        <p>Adresse: Mindener Str. 12, 31600 Uchte</p>
+                        <div class="mt-4">
+                            <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank" 
+                               class="inline-block bg-yellow-500 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-yellow-400 transition-colors touch-target">
+                                Erstgespräch anfragen
+                            </a>
+                        </div>
+                        <div class="flex space-x-3 sm:space-x-4 mt-4">
+                            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-linkedin text-xl sm:text-2xl"></i></a>
+                            <a href="https://www.instagram.com/hischamelsobhi/" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-instagram text-xl sm:text-2xl"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61563285429873" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-facebook text-xl sm:text-2xl"></i></a>
+                            <a href="https://www.youtube.com/channel/UCi4YK4-0TPlVa6mlDj1W6tg" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-youtube text-xl sm:text-2xl"></i></a>
                         </div>
                     </div>
+                </div>
+            </div>
+            <!-- Copyright Banner -->
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-gray-400 text-sm sm:text-base">&copy; 2025 ZFG Zentrum für Gesundheit - Hischam El-Sobhi. Alle Rechte vorbehalten.</p>
+            </div>
+            <!-- Disclaimer -->
+            <div class="border-t border-gray-700 pt-4 mt-4">
+                <div class="text-xs text-gray-500 space-y-2">
+                    <p><strong>Facebook Disclaimer:</strong> This site is not a part of the Facebook TM website or Facebook TM Inc. Additionally, this site is NOT endorsed by FacebookTM in any way. FACEBOOK TM is a trademark of FACEBOOK TM, Inc.</p>
+                    <p><strong>Haftungsausschluss:</strong> Das hier sind alles echte Patienten von mir, die ihre echte Meinung teilen. Niemand wurde in irgendeiner Form für diese Videos kompensiert! Ich kann dir keine Ergebnisse garantieren. All diese Menschen auf dieser Seite haben hart für ihren Erfolg gearbeitet und ihn sich wirklich verdient! Diese Erfolge sind i. d. R. nur möglich, wenn du vorher 1:1 mit mir innerhalb eines kostenlosen Beratungsgespräches sprichst und meine Strategie kennenlernst. Diese Website ist nicht für die Diagnose, Behandlung oder medizinische Beratung gedacht. Dienstleistungen und Informationen auf dieser Website gelten ausschließlich zu Informationszwecken. Dies ist KEIN "Die Wunderpille" – Programm. Das hier kommt von einem richtigen Arzt, mit richtigen Angestellten und echten Patienten, sowie einer eigenen Praxis in Niedersachsen Uchte.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Mobile Menu JavaScript -->
     <script>
-        // Fade-in animation on scroll
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close menu when clicking on links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Intersection Observer for animations
         const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -384,9 +621,12 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach((element) => {
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((element) => {
             observer.observe(element);
         });
+
+
     </script>
 </body>
 </html> 

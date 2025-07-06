@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns | Hischam El-Sobhi – Gesundheitscoaching & Praxis</title>
+    <meta name="description" content="Lernen Sie Hischam El-Sobhi und das Team kennen: Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur. Ganzheitliche Philosophie, moderne Praxis, persönliche Betreuung.">
+    <meta name="keywords" content="Hischam El-Sobhi, Über uns, Über mich, Facharzt, Ernährungsmedizin, Gesundheitscoaching, Praxis, Team, Uchte, Niedersachsen, ganzheitliche Medizin">
+    <meta name="author" content="Hischam El-Sobhi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hischamelsobhi.de/ueber-uns.html">
+    <meta property="og:title" content="Über uns - Hischam El-Sobhi">
+    <meta property="og:description" content="Lernen Sie Hischam El-Sobhi und das Team kennen: Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur.">
+    <meta property="og:image" content="https://hischamelsobhi.de/Bilder/Team.JPG">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hischamelsobhi.de/ueber-uns.html">
+    <meta property="twitter:title" content="Über uns - Hischam El-Sobhi">
+    <meta property="twitter:description" content="Lernen Sie Hischam El-Sobhi und das Team kennen: Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur.">
+    <meta property="twitter:image" content="https://hischamelsobhi.de/Bilder/Team.JPG">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hischamelsobhi.de/ueber-uns.html">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Über uns - Hischam El-Sobhi",
+        "description": "Lernen Sie Hischam El-Sobhi und das Team kennen: Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur.",
+        "url": "https://hischamelsobhi.de/ueber-uns.html",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Hischam El-Sobhi",
+            "jobTitle": "Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur",
+            "description": "Facharzt mit über 20 Jahren Erfahrung in ganzheitlicher Medizin",
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Charité – Universitätsmedizin Berlin"
+            },
+            "worksFor": {
+                "@type": "MedicalBusiness",
+                "name": "ZFG Zentrum für Gesundheit"
+            },
+            "knowsAbout": ["Ernährungsmedizin", "Allgemeinmedizin", "Akupunktur", "Ganzheitliche Medizin"]
+        }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007BFF',
+                        secondary: '#f5f7fa',
+                        accent: '#0056b3',
+                        beige: '#f8fafc',
+                        error: '#ef4444',
+                        dark: '#0a1931',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Mobile-first animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Touch-friendly elements */
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        /* Mobile navigation */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Mobile-optimized grid */
+        @media (max-width: 640px) {
+            .mobile-stack {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Performance optimizations */
+        .will-change-transform {
+            will-change: transform;
+        }
+
+        .will-change-opacity {
+            will-change: opacity;
+        }
+
+        /* Timeline styles */
+        .timeline-dot { 
+            box-shadow: 0 0 0 3px #e0e7ef; 
+        }
+        
+        .timeline-connector { 
+            background: linear-gradient(90deg, #007BFF 60%, #e0e7ef 100%); 
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-connector { 
+                background: linear-gradient(180deg, #007BFF 60%, #e0e7ef 100%); 
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header id="header" class="fixed w-full bg-white/95 backdrop-blur-sm z-50 transition-all duration-300 shadow-sm">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target">Hischam El-Sobhi</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="methode.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-primary transition-colors touch-target">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-primary font-semibold touch-target">Über uns</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 touch-target" aria-label="Menü öffnen">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- CTA Button -->
+            <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+               class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-semibold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
+                <span class="flex flex-col items-start leading-tight">
+                    <span class="hidden sm:inline">Termin vereinbaren</span>
+                    <span class="sm:hidden">Termin</span>
+                </span>
+                <span class="ml-2 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20">
+                    <i class="fas fa-arrow-right text-white text-sm sm:text-base"></i>
+                </span>
+            </a>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-sm z-50">
+            <div class="flex justify-end p-4">
+                <button id="mobile-menu-close" class="text-white touch-target" aria-label="Menü schließen">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="methode.html" class="text-white text-2xl font-semibold touch-target">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-white text-2xl font-semibold touch-target">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-white text-2xl font-semibold touch-target">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-yellow-400 text-2xl font-semibold touch-target">Über uns</a>
+                <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+                   class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target">
+                    Termin vereinbaren
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 text-white pt-32 sm:pt-32 pb-16 sm:pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6">Über uns</h1>
+                <p class="text-lg sm:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto">
+                    Ganzheitliche Medizin, persönliche Betreuung und echte Ergebnisse – das ist unser Anspruch.
+                </p>
+                <p class="text-base sm:text-lg text-indigo-100 max-w-4xl mx-auto">
+                    Lernen Sie Hischam El-Sobhi und das Team kennen. Wir begleiten Sie auf Ihrem Weg zu mehr Gesundheit, Energie und Lebensfreude.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über Hischam El-Sobhi Section -->
+    <section class="py-12 sm:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <!-- Image -->
+                <div class="fade-in">
+                    <img src="Bilder/Hischam Bild Anzug.png" alt="Hischam El-Sobhi - Facharzt für Ernährungsmedizin" 
+                         class="w-full h-auto rounded-2xl shadow-lg">
+                </div>
+                
+                <!-- Content -->
+                <div class="space-y-6 sm:space-y-8 slide-in-right">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">Hischam El-Sobhi</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 font-semibold">Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur</p>
+                    
+                    <div class="space-y-4">
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            Mit über 20 Jahren Erfahrung in der Medizin habe ich gelernt, dass Gesundheit mehr ist als die Abwesenheit von Krankheit. 
+                            Es ist ein Zustand vollständigen körperlichen, geistigen und sozialen Wohlbefindens.
+                        </p>
+                        
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            Nach meinem Studium an der Charité in Berlin und der Ausbildung zum Facharzt für Allgemeinmedizin habe ich mich 
+                            auf Ernährungsmedizin und Akupunktur spezialisiert. Diese Kombination ermöglicht es mir, Menschen ganzheitlich 
+                            zu betreuen und die Ursachen ihrer Beschwerden zu behandeln.
+                        </p>
+                        
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            In meiner Praxis in Uchte helfe ich Menschen dabei, nachhaltige Veränderungen in ihrem Leben zu erreichen. 
+                            Nicht durch kurzfristige Diäten oder Wunderpillen, sondern durch wissenschaftlich fundierte, 
+                            individuell angepasste Strategien.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophie & Werte Section -->
+    <section class="py-12 sm:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Unsere Philosophie & Werte</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Ganzheitliche Medizin, die den Menschen in den Mittelpunkt stellt. Wissenschaftlich fundiert, individuell und nachhaltig.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-heart text-lg sm:text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Ganzheitlicher Ansatz</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Wir betrachten Körper, Geist und Seele als Einheit. Nur wenn alle Bereiche im Einklang sind, kann wahre Gesundheit entstehen.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-microscope text-lg sm:text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Wissenschaftliche Fundierung</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Unsere Methoden basieren auf aktuellen medizinischen Erkenntnissen und werden kontinuierlich an neue Forschungsergebnisse angepasst.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-user text-purple-600 text-lg sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Individuelle Betreuung</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Jeder Mensch ist einzigartig. Deshalb entwickeln wir für jeden Patienten einen maßgeschneiderten Gesundheitsplan.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-shield-alt text-orange-600 text-lg sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Nachhaltigkeit</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Wir streben nach langfristigen Lösungen, nicht nach kurzfristigen Erfolgen. Nachhaltige Gesundheit ist unser Ziel.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-lightbulb text-red-600 text-lg sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Ursachenbehandlung</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Wir behandeln nicht nur Symptome, sondern suchen nach den Ursachen der Beschwerden und lösen diese auf.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-hands-helping text-teal-600 text-lg sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Partnerschaft</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Wir arbeiten partnerschaftlich mit unseren Patienten zusammen. Ihr Erfolg ist unser Erfolg.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualifikationen Section -->
+    <section class="py-12 sm:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Qualifikationen & Erfahrung</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Medizinische Kompetenz, kontinuierliche Weiterbildung und über 20 Jahre Praxiserfahrung.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-graduation-cap text-lg sm:text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Medizinstudium</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Studium der Humanmedizin an der Charité – Universitätsmedizin Berlin, 
+                        einer der renommiertesten medizinischen Fakultäten Deutschlands.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-user-md text-lg sm:text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Facharztausbildung</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Facharzt für Allgemeinmedizin mit umfassender Ausbildung in Diagnostik, 
+                        Therapie und Prävention verschiedener Erkrankungen.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-apple-alt text-lg sm:text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Ernährungsmedizin</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Spezialisierung auf Ernährungsmedizin mit Fokus auf Stoffwechselerkrankungen, 
+                        Gewichtsmanagement und präventive Ernährung.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-acupuncture text-lg sm:text-2xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Akupunktur</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Ausbildung in traditioneller chinesischer Medizin und Akupunktur für 
+                        eine ganzheitliche Behandlungsweise.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-flask text-lg sm:text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Weiterbildung</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Kontinuierliche Weiterbildung in modernsten Therapieansätzen und 
+                        wissenschaftlichen Erkenntnissen der Medizin.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 fade-in">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-users text-lg sm:text-2xl text-teal-600"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Erfahrung</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Über 20 Jahre praktische Erfahrung mit mehr als 2000 Patienten, 
+                        die erfolgreich behandelt wurden.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Praxis & Kontakt Section -->
+    <section class="py-12 sm:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <!-- Content -->
+                <div class="space-y-6 sm:space-y-8 slide-in-left">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">Unsere Praxis</h2>
+                    <p class="text-lg sm:text-xl text-gray-600">ZFG Zentrum für Gesundheit in Uchte</p>
+                    
+                    <div class="space-y-4">
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            Unsere Praxis befindet sich im Herzen von Uchte, Niedersachsen. Hier haben wir eine 
+                            moderne, aber warme Umgebung geschaffen, in der sich unsere Patienten wohlfühlen können.
+                        </p>
+                        
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            Mit modernster medizinischer Ausstattung und einem Team aus erfahrenen Fachkräften 
+                            bieten wir Ihnen eine umfassende, ganzheitliche Gesundheitsversorgung.
+                        </p>
+                        
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            Neben der persönlichen Betreuung in der Praxis bieten wir auch Online-Beratungen an, 
+                            um Ihnen maximale Flexibilität zu ermöglichen.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-4">Kontakt & Anfahrt</h3>
+                        <div class="space-y-2 text-sm sm:text-base text-gray-600">
+                            <p><strong>Adresse:</strong> Mindener Str. 12, 31600 Uchte</p>
+                            <p><strong>Email:</strong> huschi.doc@web.de</p>
+                            <p><strong>Öffnungszeiten:</strong> Mo-Fr 09:00-17:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="fade-in">
+                    <img src="Bilder/Team.JPG" alt="ZFG Zentrum für Gesundheit - Team" 
+                         class="w-full h-auto rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 sm:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">Häufige Fragen (FAQ)</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Antworten auf die wichtigsten Fragen rund um unser Coaching und die Praxis.</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto space-y-6">
+                <div class="bg-gray-50 rounded-xl shadow p-6">
+                    <h3 class="font-semibold text-lg text-primary mb-2">Wie läuft das Erstgespräch ab?</h3>
+                    <p class="text-gray-800">Im Erstgespräch lernen wir uns kennen, besprechen Ihre Ziele und klären, wie wir Sie am besten unterstützen können. Es ist unverbindlich und kostenfrei.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow p-6">
+                    <h3 class="font-semibold text-lg text-primary mb-2">Brauche ich für das Coaching eine Überweisung?</h3>
+                    <p class="text-gray-800">Nein, Sie können sich direkt bei uns melden – ganz ohne Überweisung oder bürokratischen Aufwand.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow p-6">
+                    <h3 class="font-semibold text-lg text-primary mb-2">Wie lange dauert das Programm?</h3>
+                    <p class="text-gray-800">Die Dauer ist individuell, aber die meisten Programme laufen über 3 bis 12 Monate – je nach Ziel und Ausgangslage.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow p-6">
+                    <h3 class="font-semibold text-lg text-primary mb-2">Kann ich das Coaching auch online machen?</h3>
+                    <p class="text-gray-800">Ja, alle Beratungen und Coachings sind auch online möglich – flexibel und ortsunabhängig.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 sm:py-20 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Bereit für Ihre Gesundheitsreise?</h2>
+            <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-indigo-100">Lernen Sie uns persönlich kennen und erfahren Sie, wie wir Ihnen auf Ihrem Weg zu mehr Gesundheit und Wohlbefinden helfen können.</p>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank"
+               class="inline-block bg-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-yellow-400 transition-all duration-300 shadow-lg touch-target">
+                Jetzt kostenloses Erstgespräch buchen
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 mt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-8">
+                <!-- Dienstleistung -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-100">Dienstleistung</h3>
+                    <ul class="space-y-2 text-base sm:text-lg">
+                        <li><a href="testimonials.html" class="font-semibold hover:text-yellow-400 transition-colors touch-target">Kundenerfolge</a></li>
+                        <li><a href="testimonials.html" class="hover:text-yellow-400 transition-colors touch-target">Erfahrungen</a></li>
+                        <li><a href="zusammenarbeit.html" class="hover:text-yellow-400 transition-colors touch-target">Unsere Betreuung</a></li>
+                        <li><a href="methode.html" class="hover:text-yellow-400 transition-colors touch-target">Unser Konzept</a></li>
+                        <li>
+                            <a href="https://hischamelsobhi.de" class="hover:text-yellow-400 transition-colors font-semibold touch-target">Das Buch "360° Balance"
+                                <span class="ml-2 align-middle inline-block bg-gray-700 text-xs text-green-200 font-bold px-2 py-0.5 rounded">NEU</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Über -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-100">Über</h3>
+                    <ul class="space-y-2 text-base sm:text-lg">
+                        <li><a href="index.html" class="hover:text-yellow-400 transition-colors touch-target">Startseite</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors touch-target">Karriere</a></li>
+                        <li><a href="ueber-uns.html" class="hover:text-yellow-400 transition-colors touch-target">Über uns</a></li>
+                        <li><a href="impressum.html" class="hover:text-yellow-400 transition-colors touch-target">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-yellow-400 transition-colors touch-target">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <!-- Kontakt -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Kontakt</h3>
+                    <div class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <p>Hischam El-Sobhi</p>
+                        <p>Arzt für Allgemeinmedizin</p>
+                        <p>Email: huschi.doc@web.de</p>
+                        <p>Adresse: Mindener Str. 12, 31600 Uchte</p>
+                        <div class="mt-4">
+                            <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank" 
+                               class="inline-block bg-yellow-500 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-yellow-400 transition-colors touch-target">
+                                Erstgespräch anfragen
+                            </a>
+                        </div>
+                        <div class="flex space-x-3 sm:space-x-4 mt-4">
+                            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-linkedin text-xl sm:text-2xl"></i></a>
+                            <a href="https://www.instagram.com/hischamelsobhi/" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-instagram text-xl sm:text-2xl"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61563285429873" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-facebook text-xl sm:text-2xl"></i></a>
+                            <a href="https://www.youtube.com/channel/UCi4YK4-0TPlVa6mlDj1W6tg" target="_blank" class="text-gray-400 hover:text-white touch-target"><i class="fab fa-youtube text-xl sm:text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright Banner -->
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-gray-400 text-sm sm:text-base">&copy; 2025 ZFG Zentrum für Gesundheit - Hischam El-Sobhi. Alle Rechte vorbehalten.</p>
+            </div>
+            <!-- Disclaimer -->
+            <div class="border-t border-gray-700 pt-4 mt-4">
+                <div class="text-xs text-gray-500 space-y-2">
+                    <p><strong>Facebook Disclaimer:</strong> This site is not a part of the Facebook TM website or Facebook TM Inc. Additionally, this site is NOT endorsed by FacebookTM in any way. FACEBOOK TM is a trademark of FACEBOOK TM, Inc.</p>
+                    <p><strong>Haftungsausschluss:</strong> Das hier sind alles echte Patienten von mir, die ihre echte Meinung teilen. Niemand wurde in irgendeiner Form für diese Videos kompensiert! Ich kann dir keine Ergebnisse garantieren. All diese Menschen auf dieser Seite haben hart für ihren Erfolg gearbeitet und ihn sich wirklich verdient! Diese Erfolge sind i. d. R. nur möglich, wenn du vorher 1:1 mit mir innerhalb eines kostenlosen Beratungsgespräches sprichst und meine Strategie kennenlernst. Diese Website ist nicht für die Diagnose, Behandlung oder medizinische Beratung gedacht. Dienstleistungen und Informationen auf dieser Website gelten ausschließlich zu Informationszwecken. Dies ist KEIN "Die Wunderpille" – Programm. Das hier kommt von einem richtigen Arzt, mit richtigen Angestellten und echten Patienten, sowie einer eigenen Praxis in Niedersachsen Uchte.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close menu when clicking on links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html> 
