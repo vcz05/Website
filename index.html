@@ -41,9 +41,10 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="Bilder/Logo.png">
+    <link rel="icon" type="image/x-icon" href="Bilder/logo.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="Bilder/Logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -226,7 +227,7 @@
 </head>
 <body class="bg-white">
     <!-- Sticky Header -->
-    <header id="header" class="fixed w-full bg-transparent backdrop-blur-sm z-50 transition-all duration-300 top-2">
+    <header id="header" class="fixed w-full bg-transparent backdrop-blur-sm z-50 transition-all duration-300">
         <nav class="max-w-6xl mx-auto px-4 sm:px-8 h-[72px] flex justify-between items-center">
             <!-- Mobile Menu Button (left) -->
             <button id="mobile-menu-btn" class="md:hidden text-white touch-target" aria-label="Menü öffnen">
@@ -234,7 +235,10 @@
             </button>
             
             <!-- Logo (center on mobile, left on desktop) -->
-            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target flex items-center h-full">Hischam El-Sobhi</a>
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target flex items-center h-full">
+                <!-- <img src="Bilder/weiß logo.png" alt="Logo Hischam El-Sobhi" class="h-12 w-auto mr-2 hidden sm:inline-block align-middle"> -->
+                Hischam El-Sobhi
+            </a>
             
             <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-4 lg:space-x-6 items-center h-full ml-24">
@@ -834,7 +838,7 @@
                         </div>
                         <!-- Right: Image -->
                         <div class="flex justify-center">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop" alt="Gesundheitscoaching – Beratung und Begleitung" class="w-full max-w-sm h-64 object-cover rounded-2xl shadow-xl">
+                            <img src="Bilder/heil-vorher- nachher.png" alt="Heil Vorher-Nachher Transformation" class="w-full max-w-sm h-64 object-cover rounded-2xl shadow-xl">
                         </div>
                     </div>
                 </div>
@@ -984,19 +988,26 @@
 
     <!-- Deine nächsten Schritte Section -->
     <section class="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden">
-        <!-- Decorative background elements -->
-        <div class="absolute top-0 right-0 w-full h-full opacity-5">
-            <div class="absolute top-20 left-10 w-40 h-40 bg-purple-500 rounded-full"></div>
-            <div class="absolute bottom-10 right-20 w-28 h-28 bg-pink-500 rounded-full"></div>
-            <div class="absolute top-1/3 left-1/3 w-20 h-20 bg-violet-500 rounded-full"></div>
-        </div>
+        <!-- Dark geometric pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 20 0 L 0 0 0 20" fill="none" stroke="%23374151" stroke-width="0.5" opacity="0.1"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100" height="100" fill="url(%23grid)"/%3E%3C/svg%3E')]"></div>
+        
+        <!-- Intense gradient overlays -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/20 via-purple-600/15 to-cyan-600/20"></div>
+        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-emerald-600/15 via-teal-600/20 to-blue-600/15"></div>
+        
+        <!-- Dynamic floating elements -->
+        <div class="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute top-40 right-20 w-48 h-48 bg-gradient-to-br from-cyan-500/25 to-blue-600/25 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-1/4 w-80 h-80 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-40 right-1/3 w-56 h-56 bg-gradient-to-br from-emerald-500/30 to-teal-600/30 rounded-full blur-3xl"></div>
+        
         
         <div class="max-w-6xl mx-auto px-8 relative z-10">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
                     Deine nächsten <span class="text-primary">Schritte</span>
                 </h2>
-                <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                <p class="text-lg text-white max-w-3xl mx-auto">
                     Du möchtest Teil unseres Programms werden? Dann bewirb dich jetzt für ein Erstgespräch! Wir prüfen gemeinsam, ob du zu uns und unserem Ansatz passt – und nur wenn es für beide Seiten stimmig ist, starten wir die Zusammenarbeit.
                 </p>
             </div>
@@ -1068,22 +1079,22 @@
     </section>
 
     <!-- Divider Section -->
-    <section class="py-16 bg-white relative">
+    <section class="py-4 bg-white relative">
         <div class="max-w-6xl mx-auto px-8">
-            <div class="flex items-center justify-center space-x-4">
-                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-                <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
-                    <i class="fas fa-user-md text-2xl text-white"></i>
+            <div class="flex items-center justify-center space-x-2">
+                <div class="flex-1 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                    <i class="fas fa-user-md text-xl text-white"></i>
                 </div>
-                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                <div class="flex-1 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
             </div>
-                    </div>
+        </div>
     </section>
 
 
         
     <!-- About Me Section -->
-    <section id="about" class="py-20 bg-[#eaf6fb] relative overflow-hidden">
+    <section id="about" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden">
         <!-- Decorative background elements -->
         <div class="absolute top-0 right-0 w-full h-full opacity-5">
             <div class="absolute top-20 right-10 w-40 h-40 bg-blue-500 rounded-full"></div>
@@ -1159,7 +1170,7 @@
                     </div>
                     <!-- Right: Image -->
                     <div class="flex justify-center">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop" alt="Gesundheitscoaching – Beratung und Begleitung" class="w-full max-w-sm h-64 object-cover rounded-2xl shadow-xl">
+                        <img src="Bilder/2.png" alt="Gesundheitscoaching – Beratung und Begleitung" class="w-full max-w-sm h-64 object-cover rounded-2xl shadow-xl">
                     </div>
                 </div>
 </div>
