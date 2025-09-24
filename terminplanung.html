@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewerbung starten | Praxis in Uchte – Hischam El‑Sobhi</title>
+    <meta name="description" content="Schritt-für-Schritt-Bewerbung: Beantworte wenige Fragen und prüfe, ob ein persönliches Gespräch sinnvoll ist.">
+    <link rel="canonical" href="https://coaching.hischamelsobhi.de/terminplanung.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .25s ease-out, transform .25s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .touch-target { min-height: 44px; min-width: 44px; }
+        .step-hidden { display: none; }
+        .answer-btn { transition: transform .12s ease; }
+        .answer-btn:active { transform: scale(.97); }
+        .focus-outline { outline: none; box-shadow: 0 0 0 3px rgba(59,130,246,.35); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-emerald-50 to-white">
+    <!-- Ablenkungsfreie Seite: nur Inhalt -->
+    <main class="min-h-screen flex items-center justify-center px-5 py-10">
+        <div class="w-full max-w-3xl">
+            <!-- Intro-Card -->
+            <section id="intro" class="bg-white/90 rounded-3xl border border-emerald-200 shadow-2xl p-7 sm:p-10 fade-in visible">
+                <div class="text-center">
+                    <span class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                        <i class="fas fa-map-marker-alt text-emerald-600"></i>
+                        Praxis in Uchte – persönlich und vor Ort
+                    </span>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Hier startet dein Weg zu mehr Leichtigkeit</h1>
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-3">
+                        Schön, dass du da bist. Damit wir dich gezielt unterstützen können, beantworten wir gemeinsam ein paar knackige Fragen – kurz, klar und auf den Punkt.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-8">Wir arbeiten bewusst mit ausgewählten Bewerbern. Deine Antworten zeigen uns, ob und wie wir dich am besten begleiten können.</p>
+                    <button id="startBtn" class="inline-flex items-center justify-center bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-semibold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
+                        Jetzt Bewerbung starten
+                        <span class="ml-3 inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
+                            <i class="fas fa-arrow-right text-white text-sm"></i>
+                        </span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Questionnaire -->
+            <section id="wizard" class="step-hidden mt-6">
+                <div class="bg-white rounded-3xl shadow-2xl p-6 sm:p-8">
+                    <!-- Progress -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-2">
+                            <span id="progressLabel">Frage 1 von 12</span>
+                            <span id="progressPct">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div id="progressBar" class="bg-emerald-500 h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question container -->
+                    <div id="questionContainer" class="min-h-[180px]"></div>
+
+                    <!-- Navigation / Helper -->
+                    <div class="mt-6 flex items-center justify-between">
+                        <button id="backBtn" class="text-gray-500 hover:text-gray-700 text-sm" type="button">
+                            <i class="fas fa-arrow-left mr-1"></i> Zurück
+                        </button>
+                        <button id="nextBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-full text-sm font-semibold step-hidden" type="button">Weiter</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+    // ======= Direkt in Google Sheets schreiben =======
+    // Option 1: Google Apps Script Web App (EMPFOHLEN)
+    // Erstelle ein Google Apps Script und verwende die Web App URL
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8VZOfxDa3GPw6_8JILTBJVPw9lEtoZ2M4fvtGew5alDMKCdDaZfHeqFtXvnTDW2xmHA';
+    
+    // Option 2: Google Sheets API (komplexer)
+    const GOOGLE_SHEETS_API_KEY = 'YOUR_API_KEY';
+    const GOOGLE_SHEETS_ID = 'YOUR_SHEET_ID';
+    
+    // Option 3: Einfacher Webhook zu Google Sheets
+    const SHEETS_WEBHOOK_URL = '';
+
+    // ======= Fragen-Definition =======
+    // type: 'choice' (single choice per click, auto-advance) | 'text' (Eingabe, Enter oder Weiter) | 'number'
+    const steps = [
+        {
+            key: 'geschlecht',
+            title: 'Welchem Geschlecht fühlst du dich zugehörig?',
+            type: 'choice',
+            options: ['👩 Weiblich', '👨 Männlich', 'Divers']
+        },
+        {
+            key: 'vorname',
+            title: 'Wie ist dein Vorname?',
+            type: 'text',
+            placeholder: 'Vorname',
+            validate: (v) => v.trim().length >= 2
+        },
+        {
+            key: 'nachname',
+            title: 'Wie ist dein Nachname?',
+            type: 'text',
+            placeholder: 'Nachname',
+            validate: (v) => v.trim().length >= 2
+        },
+        {
+            key: 'alter',
+            title: 'Wie alt bist du?',
+            type: 'number',
+            placeholder: 'Alter in Jahren',
+            validate: (v) => {
+                const n = parseInt(v, 10);
+                return !isNaN(n) && n >= 10 && n <= 100;
+            }
+        },
+        {
+            key: 'herausforderung_bereich',
+            title: 'In welchem Bereich erlebst du derzeit die größten Hürden?',
+            type: 'choice',
+            options: ['Mindset / mentale Gesundheit', 'Ernährung', 'Sport & Bewegung', 'Darm', 'Sonstiges']
+        },
+        {
+            key: 'ziel_6m',
+            title: 'Woran würdest du in 6 Monaten erkennen, dass es sich gelohnt hat?',
+            type: 'text',
+            placeholder: 'Beschreibe dein Ziel in einem Satz',
+            validate: (v) => v.trim().length >= 5
+        },
+        {
+            key: 'abnehmen',
+            title: 'Wie viel möchtest du abnehmen?',
+            type: 'choice',
+            options: ['< 5 kg', '5 – 10 kg', '10 – 20 kg', '> 20 kg']
+        },
+        {
+            key: 'job',
+            title: 'Was machst du beruflich?',
+            type: 'text',
+            placeholder: 'z. B. Bürokaufmann/-frau, Pflege, Selbstständig …',
+            validate: (v) => v.trim().length >= 2
+        },
+        {
+            key: 'email',
+            title: 'Wie erreichen wir dich per E‑Mail?',
+            type: 'text',
+            placeholder: 'dein.name@mail.de',
+            validate: (v) => /.+@.+\..+/.test(v.trim())
+        },
+        {
+            key: 'telefon',
+            title: 'Deine Telefonnummer für Rückfragen',
+            type: 'text',
+            placeholder: '0151 12345678',
+            validate: (v) => v.trim().length >= 6
+        },
+        {
+            key: 'invest',
+            title: 'Bist du grundsätzlich bereit, Zeit, Energie und Geld in deine Gesundheit zu investieren?',
+            type: 'choice',
+            options: ['Ja, klar', 'Unsicher – möchte ich besprechen', 'Nein']
+        },
+        {
+            key: 'abschluss',
+            title: 'Fast geschafft! So geht es jetzt weiter:',
+            type: 'text',
+            placeholder: '',
+            // Hier keine Validierung nötig; Weiter-Button wird eingeblendet
+            validate: null
+        }
+    ];
+
+    let current = 0;
+    const answers = {};
+
+    const intro = document.getElementById('intro');
+    const wizard = document.getElementById('wizard');
+    const startBtn = document.getElementById('startBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressLabel = document.getElementById('progressLabel');
+    const progressPct = document.getElementById('progressPct');
+    const questionContainer = document.getElementById('questionContainer');
+    const backBtn = document.getElementById('backBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    startBtn.addEventListener('click', () => {
+        intro.classList.add('step-hidden');
+        wizard.classList.remove('step-hidden');
+        renderStep();
+    });
+
+    backBtn.addEventListener('click', () => {
+        if (current > 0) {
+            current -= 1;
+            renderStep();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        advance();
+    });
+
+    function renderStep() {
+        const step = steps[current];
+        updateProgress();
+        
+        // Container komplett leeren für sauberen Übergang
+        questionContainer.innerHTML = '';
+        nextBtn.classList.add('step-hidden');
+
+        // Wrapper für sanfte Step-Animation
+        const wrapper = document.createElement('div');
+        wrapper.className = 'fade-in';
+        questionContainer.appendChild(wrapper);
+
+        const title = document.createElement('h2');
+        title.className = 'text-xl md:text-2xl font-semibold text-gray-900 mb-4';
+        title.textContent = step.title;
+        wrapper.appendChild(title);
+
+        if (step.key === 'abschluss') {
+            const info = document.createElement('div');
+            info.className = 'text-gray-700 mb-5';
+            info.innerHTML = 'Im Anschluss vereinbarst du direkt einen kurzen Zoom‑Termin, um offene Fragen zu klären und den besten Einstieg zu planen. Sende jetzt deine Angaben ab – danach wirst du zur Terminseite weitergeleitet.';
+            wrapper.appendChild(info);
+            const submitBtn = document.createElement('a');
+            submitBtn.href = '#';
+            submitBtn.className = 'inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-full text-base font-semibold';
+            submitBtn.innerHTML = 'Fragebogen abschicken & Termin wählen <span class="ml-3"><i class="fas fa-arrow-right"></i></span>';
+            submitBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                submitAnswers(true);
+            });
+            wrapper.appendChild(submitBtn);
+            backBtn.style.visibility = 'visible';
+            setTimeout(() => wrapper.classList.add('visible'), 0);
+            return;
+        }
+
+        if (step.type === 'choice') {
+            // Bildauswahl für spezifische Schritte
+            const isGender = step.key === 'geschlecht';
+            const isChallenge = step.key === 'herausforderung_bereich';
+
+            if (isGender || isChallenge) {
+                const grid = document.createElement('div');
+                grid.className = 'grid grid-cols-1 sm:grid-cols-2 gap-3';
+
+                const imageMap = {};
+                if (isGender) {
+                    imageMap['👩 Weiblich'] = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop';
+                    imageMap['👨 Männlich'] = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop';
+                    // Divers ohne Bild
+                }
+                if (isChallenge) {
+                    imageMap['Mindset / mentale Gesundheit'] = 'https://images.unsplash.com/photo-1543269664-56d93c1b41a6?w=600&q=80&auto=format&fit=crop';
+                    imageMap['Ernährung'] = 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&auto=format&fit=crop';
+                    imageMap['Sport & Bewegung'] = 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80&auto=format&fit=crop';
+                    imageMap['Darm'] = 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80&auto=format&fit=crop';
+                    imageMap['Sonstiges'] = 'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&q=80&auto=format&fit=crop';
+                }
+
+                step.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'answer-btn w-full text-left rounded-xl border border-gray-200 hover:border-emerald-400 hover:bg-emerald-50 overflow-hidden';
+
+                    if (imageMap[opt]) {
+                        const img = document.createElement('img');
+                        img.src = imageMap[opt];
+                        img.alt = opt;
+                        img.className = 'w-full h-36 object-cover';
+
+                        const cap = document.createElement('div');
+                        cap.className = 'px-4 py-3';
+                        cap.textContent = opt;
+
+                        btn.appendChild(img);
+                        btn.appendChild(cap);
+                    } else {
+                        // Nur Text für Divers
+                        btn.className = 'answer-btn w-full text-left px-4 py-3 rounded-xl border border-gray-200 hover:border-emerald-400 hover:bg-emerald-50';
+                        btn.textContent = opt;
+                    }
+
+                    btn.addEventListener('click', () => {
+                        answers[step.key] = opt;
+                        advance();
+                    });
+                    grid.appendChild(btn);
+                });
+                wrapper.appendChild(grid);
+            } else {
+                const grid = document.createElement('div');
+                grid.className = 'grid grid-cols-1 sm:grid-cols-2 gap-3';
+                step.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'answer-btn w-full text-left px-4 py-3 rounded-xl border border-gray-200 hover:border-emerald-400 hover:bg-emerald-50';
+                    btn.textContent = opt;
+                    btn.addEventListener('click', () => {
+                        answers[step.key] = opt;
+                        advance();
+                    });
+                    grid.appendChild(btn);
+                });
+                wrapper.appendChild(grid);
+            }
+        } else if (step.type === 'text') {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = step.placeholder || '';
+            input.className = 'w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-400 focus:outline-none';
+            input.addEventListener('input', () => {
+                if (!step.validate || step.validate(input.value)) {
+                    nextBtn.classList.remove('step-hidden');
+                } else {
+                    nextBtn.classList.add('step-hidden');
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    if (!step.validate || step.validate(input.value)) {
+                        answers[step.key] = input.value.trim();
+                        advance();
+                    }
+                }
+            });
+            wrapper.appendChild(input);
+            setTimeout(() => input.focus(), 0);
+        } else if (step.type === 'number') {
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.placeholder = step.placeholder || '';
+            input.min = '10';
+            input.max = '100';
+            input.className = 'w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-400 focus:outline-none';
+            input.addEventListener('input', () => {
+                if (!step.validate || step.validate(input.value)) {
+                    nextBtn.classList.remove('step-hidden');
+                } else {
+                    nextBtn.classList.add('step-hidden');
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    if (!step.validate || step.validate(input.value)) {
+                        answers[step.key] = input.value.trim();
+                        advance();
+                    }
+                }
+            });
+            wrapper.appendChild(input);
+            setTimeout(() => input.focus(), 0);
+        }
+
+        backBtn.style.visibility = current === 0 ? 'hidden' : 'visible';
+        // Animation starten - mit kurzer Verzögerung für sauberen Übergang
+        setTimeout(() => {
+            wrapper.classList.add('visible');
+        }, 10);
+    }
+
+    function updateProgress() {
+        const total = steps.length;
+        const idx = current + 1;
+        const pct = Math.round(((idx - 1) / total) * 100);
+        progressLabel.textContent = `Frage ${idx} von ${total}`;
+        progressPct.textContent = `${pct}%`;
+        progressBar.style.width = `${pct}%`;
+    }
+
+    async function advance() {
+        const step = steps[current];
+        if (step && (step.type === 'text' || step.type === 'number')) {
+            const input = questionContainer.querySelector('input');
+            if (input) {
+                const val = input.value.trim();
+                if (step.validate && !step.validate(val)) return;
+                answers[step.key] = val;
+            }
+        }
+        if (current < steps.length - 1) {
+            current += 1;
+            renderStep();
+        } else {
+            await submitAnswers(true);
+        }
+    }
+
+    async function submitAnswers(redirectAfter = false) {
+        // ======= Direkt in Google Sheets schreiben =======
+        try {
+            // Option 1: Google Apps Script Web App (EMPFOHLEN)
+            if (GOOGLE_APPS_SCRIPT_URL && GOOGLE_APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec') {
+                const payload = {
+                    timestamp: new Date().toISOString(),
+                    geschlecht: answers.geschlecht || '',
+                    vorname: answers.vorname || '',
+                    nachname: answers.nachname || '',
+                    alter: answers.alter || '',
+                    herausforderung: answers.herausforderung_bereich || '',
+                    ziel_6m: answers.ziel_6m || '',
+                    abnehmen: answers.abnehmen || '',
+                    job: answers.job || '',
+                    email: answers.email || '',
+                    telefon: answers.telefon || '',
+                    invest: answers.invest || ''
+                };
+                
+                await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            }
+            
+            // Option 2: Google Sheets API (falls konfiguriert)
+            if (GOOGLE_SHEETS_API_KEY && GOOGLE_SHEETS_ID) {
+                const values = [
+                    new Date().toISOString(),
+                    answers.geschlecht || '',
+                    answers.vorname || '',
+                    answers.nachname || '',
+                    answers.alter || '',
+                    answers.herausforderung_bereich || '',
+                    answers.ziel_6m || '',
+                    answers.abnehmen || '',
+                    answers.job || '',
+                    answers.email || '',
+                    answers.telefon || '',
+                    answers.invest || ''
+                ];
+                
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_ID}/values/A:Z:append?valueInputOption=RAW&key=${GOOGLE_SHEETS_API_KEY}`;
+                await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ values: [values] })
+                });
+            }
+            
+            // Option 3: Webhook (falls konfiguriert)
+            if (SHEETS_WEBHOOK_URL) {
+                const payload = {
+                    timestamp: new Date().toISOString(),
+                    ...answers
+                };
+                await fetch(SHEETS_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            }
+            
+            console.log('Antworten in Google Sheets gespeichert:', answers);
+        } catch (e) {
+            console.warn('Speichern fehlgeschlagen:', e);
+        }
+
+        if (redirectAfter) {
+            window.location.href = 'https://hischamelsobhi.de/termin';
+            return;
+        }
+
+        // Fallback-Abschlussbildschirm
+        questionContainer.innerHTML = '';
+        const done = document.createElement('div');
+        done.className = 'text-center';
+        done.innerHTML = `
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Danke für deine Angaben!</h2>
+            <p class="text-gray-700 mb-4">Wir prüfen deine Bewerbung und leiten dich gleich zur Terminbuchung (Zoom) weiter.</p>
+            <a href="https://hischamelsobhi.de/termin" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-full text-sm font-semibold">Jetzt Termin wählen</a>
+        `;
+        questionContainer.appendChild(done);
+        backBtn.style.visibility = 'hidden';
+        nextBtn.classList.add('step-hidden');
+        progressBar.style.width = '100%';
+        progressPct.textContent = '100%';
+        progressLabel.textContent = 'Abgeschlossen';
+    }
+    </script>
+</body>
+</html>
