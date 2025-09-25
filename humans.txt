@@ -1,0 +1,35 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Hischam El-Sobhi -- Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akupunktur -- huschi.doc@web.de
+    ZFG Zentrum für Gesundheit -- Medizinische Praxis -- Uchte, Niedersachsen
+
+# THANKS
+
+    Charité – Universitätsmedizin Berlin
+    Tailwind CSS
+    Font Awesome
+    Google Fonts
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, JavaScript
+    Tailwind CSS Framework
+    Font Awesome Icons
+    Google Fonts (Inter)
+    Responsive Design
+    Mobile-First Approach
+    SEO Optimized
+    Schema.org Markup
+    Open Graph Protocol
+    Twitter Cards
+
+# SITE
+
+    Last update: 2025/01/15
+    Language: German
+    Doctype: HTML5
+    IDE: Cursor AI
+    Standards: HTML5, CSS3, ES6

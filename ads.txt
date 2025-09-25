@@ -1,0 +1,6 @@
+# ads.txt file for coaching.hischamelsobhi.de
+# This file is used to authorize digital sellers to sell inventory
+# For more information, visit: https://iabtechlab.com/ads-txt/
+
+# No advertising partners currently configured
+# This file is present for SEO completeness

@@ -1,0 +1,10 @@
+Contact: mailto:huschi.doc@web.de
+Contact: https://coaching.hischamelsobhi.de/impressum.html
+Expires: 2026-01-15T00:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://coaching.hischamelsobhi.de/.well-known/security.txt
+Policy: https://coaching.hischamelsobhi.de/datenschutz.html
+
+# Security Policy for Hischam El-Sobhi - ZFG Zentrum für Gesundheit
+# This file is used to report security vulnerabilities
+# Please report any security issues to the contact above

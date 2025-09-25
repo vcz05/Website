@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hischam El-Sobhi - Ärztliches Gesundheitscoaching | Nachhaltiges Abnehmen ohne Hunger</title>
-    <meta name="description" content="Hischam El-Sobhi - Facharzt für Ernährungsmedizin mit 20+ Jahren Erfahrung. Ganzheitliches Gesundheitscoaching für nachhaltiges Abnehmen ohne Hunger & Verzicht. Jetzt kostenloses Erstgespräch buchen.">
-    <meta name="keywords" content="Hischam El-Sobhi, Ernährungsmedizin, Gesundheitscoaching, nachhaltiges Abnehmen, Arzt, Uchte, Niedersachsen, Stoffwechsel, ganzheitliche Medizin">
+    <meta name="description" content="Hischam El-Sobhi - Facharzt für Ernährungsmedizin in Uchte, Niedersachsen. Ganzheitliches Gesundheitscoaching für nachhaltiges Abnehmen ohne Hunger & Verzicht. Abnehmen in Uchte, Hannover, Bremen. Jetzt kostenloses Erstgespräch buchen.">
+    <meta name="keywords" content="Hischam El-Sobhi, Ernährungsmedizin, Gesundheitscoaching, nachhaltiges Abnehmen, Arzt, Uchte, Niedersachsen, Hannover, Bremen, Stoffwechsel, ganzheitliche Medizin, abnehmen in Uchte, Abnehmcoaching Uchte, Ernährungsberatung Uchte">
     <meta name="author" content="Hischam El-Sobhi">
     <meta name="robots" content="index, follow">
     <meta name="language" content="de">
@@ -42,9 +42,22 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="Bilder/icon-groß.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="Bilder/blau-logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Bilder/icon-groß.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="Bilder/icon-groß.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="Bilder/icon-groß.ico">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Mobile & PWA Meta Tags -->
+    <meta name="theme-color" content="#007BFF">
+    <meta name="msapplication-TileColor" content="#007BFF">
+    <meta name="msapplication-TileImage" content="Bilder/blau-logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Hischam El-Sobhi">
+    <meta name="application-name" content="Hischam El-Sobhi">
+    <meta name="mobile-web-app-capable" content="yes">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -54,7 +67,7 @@
         "name": "ZFG Zentrum für Gesundheit - Hischam El-Sobhi",
         "description": "Ärztliches Gesundheitscoaching für nachhaltiges Abnehmen und ganzheitliche Gesundheit",
         "url": "https://coaching.hischamelsobhi.de",
-        "telephone": "+49-XXXX-XXXXXX",
+        "telephone": "+49 (5763) 2343",
         "email": "huschi.doc@web.de",
         "address": {
             "@type": "PostalAddress",
@@ -88,6 +101,49 @@
         ]
     }
     </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Wie läuft das Erstgespräch ab?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Im Erstgespräch lernen wir uns kennen, besprechen deine Ziele und klären, wie ich dich am besten unterstützen kann. Es ist unverbindlich und kostenfrei."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Brauche ich für das Coaching eine Überweisung?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nein, du kannst dich direkt bei mir melden – ganz ohne Überweisung oder bürokratischen Aufwand."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie lange dauert das Programm?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Dauer ist individuell, aber die meisten Programme laufen über 3 bis 12 Monate – je nach Ziel und Ausgangslage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kann ich das Coaching auch online machen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja, alle Beratungen und Coachings sind auch online möglich – flexibel und ortsunabhängig."
+                }
+            }
+        ]
+    }
+    </script>
+    
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -240,27 +296,26 @@
             </button>
             
             <!-- Logo (center on mobile, left on desktop) -->
-            <a href="index.html" class="text-xl sm:text-2xl font-bold text-gray-900 touch-target flex items-center h-full">
-                <!-- <img src="Bilder/weiß logo.png" alt="Logo Hischam El-Sobhi" class="h-12 w-auto mr-2 hidden sm:inline-block align-middle"> -->
+            <a href="index.html" class="text-xl sm:text-2xl font-bold text-white touch-target flex items-center h-full">
                 Hischam El-Sobhi
             </a>
             
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-4 lg:space-x-6 items-center h-full ml-24">
-                <a href="methode.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Unser Konzept</a>
-                <a href="zusammenarbeit.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Unsere Betreuung</a>
-                <a href="testimonials.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Patientenerfolge</a>
-                <a href="ueber-uns.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full">Über uns</a>
+            <div class="hidden md:flex space-x-4 lg:space-x-6 items-center h-full">
+                <a href="methode.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full text-sm lg:text-base">Unser Konzept</a>
+                <a href="zusammenarbeit.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full text-sm lg:text-base">Unsere Betreuung</a>
+                <a href="testimonials.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full text-sm lg:text-base">Patientenerfolge</a>
+                <a href="ueber-uns.html" class="text-white hover:text-primary transition-colors touch-target flex items-center h-full text-sm lg:text-base">Über uns</a>
             </div>
 
             <!-- CTA Button -->
             <a href="terminplanung.html" target="_blank"
-            class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-4 py-2 rounded-full text-base font-bold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 min-w-[0] w-auto">
+            class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-3 py-2 rounded-full text-sm font-bold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 min-w-[0] w-auto">
                 <span class="flex flex-col items-start leading-tight">
-                    <span class="hidden sm:inline">Bewerbung starten</span>
-                    <span class="sm:hidden">Bewerbung</span>
+                    <span class="hidden lg:inline">Bewerbung starten</span>
+                    <span class="lg:hidden">Bewerbung</span>
                 </span>
-                <span class="ml-2 flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
+                <span class="ml-2 flex items-center justify-center w-5 h-5 rounded-full bg-white/20">
                     <i class="fas fa-arrow-right text-white text-xs"></i>
                 </span>
             </a>
@@ -312,7 +367,7 @@
             <div class="lg:hidden">
                 <!-- Content first on mobile -->
                 <div class="space-y-6 sm:space-y-8 fade-in">
-                    <span class="block text-white text-sm sm:text-base md:text-lg font-semibold mb-2">Ernährungsmediziner mit mehr als 2000 Patienten und 20 Jahren Erfahrung: Hischam El-Sobhi</span>
+                    <span class="block text-white text-sm sm:text-base md:text-lg font-semibold mb-2">Ernährungsmediziner mit mehr als 2000 Patienten und 20 Jahren Erfahrung in Uchte: Hischam El-Sobhi</span>
                     <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                         Endlich <span class="text-blue-400">nachhaltig abnehmen</span> ohne Hunger & Verzicht
                     </h1>
@@ -339,7 +394,7 @@
                             class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-bold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-auto mx-auto sm:w-auto touch-target">
                             <span class="flex flex-col items-start">
                                 <span class="font-bold">Bewerbung starten</span>
-                                <span class="text-sm font-medium text-white/90">Exklusiv & limitiert – nur für passende Patienten</span>
+                                <span class="text-sm font-medium text-white/90">kostenlos und unverbindlich</span>
                             </span>
                             <span class="ml-3 flex items-center justify-center w-5 h-5 rounded-full bg-white/20">
                                 <i class="fas fa-arrow-right text-white text-sm"></i>
@@ -365,7 +420,7 @@
                             class="relative flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 sm:px-8 py-4 rounded-full text-lg sm:text-xl font-bold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-full sm:w-auto touch-target">
                             <span class="flex flex-col items-start">
                                 <span class="font-bold">Bewerbung starten</span>
-                                <span class="text-sm font-medium text-white/90">Premium-Betreuung für ausgewählte Kandidaten</span>
+                                <span class="text-sm font-medium text-white/90">kostenlos und unverbindlich</span>
                             </span>
                             <span class="ml-4 flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white/20">
                                 <i class="fas fa-arrow-right text-white text-base sm:text-lg"></i>
@@ -687,7 +742,7 @@
                 </div>
                 <!-- Teamfoto rechts -->
                 <div class="flex-1 flex items-center justify-center fade-in">
-                    <img src="Bilder/Team.JPG" alt="Teamfoto Hischam El-Sobhi Gesundheitscoaching" class="rounded-2xl shadow-2xl w-full max-w-md object-cover border-4 border-blue-400">
+                    <img src="Bilder/Team.JPG" alt="Teamfoto Hischam El-Sobhi Gesundheitscoaching" class="rounded-2xl shadow-2xl w-full max-w-md object-cover border-4 border-blue-400" loading="lazy">
                 </div>
             </div>
         </div>
@@ -833,7 +888,7 @@
                                    class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-bold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-full sm:w-auto">
                                     <span class="flex flex-col items-start">
                                         <span class="font-bold">Bewerbung starten</span>
-                                        <span class="text-sm font-medium text-white/90">Exklusiv & limitiert – nur für passende Kandidaten</span>
+                                        <span class="text-sm font-medium text-white/90">kostenlos und unverbindlich</span>
                                     </span>
                                     <span class="ml-3 flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
                                         <i class="fas fa-arrow-right text-white text-base"></i>
@@ -1165,7 +1220,7 @@
                                class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-bold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-full sm:w-auto">
                                 <span class="flex flex-col items-start">
                                     <span class="font-bold">Bewerbung starten</span>
-                                    <span class="text-sm font-medium text-white/90">Premium-Betreuung für ausgewählte Kandidaten</span>
+                                    <span class="text-sm font-medium text-white/90">kostenlos und unverbindlich</span>
                                 </span>
                                 <span class="ml-3 flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
                                     <i class="fas fa-arrow-right text-white text-base"></i>

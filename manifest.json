@@ -1,0 +1,28 @@
+{
+    "name": "Hischam El-Sobhi - Ärztliches Gesundheitscoaching",
+    "short_name": "Hischam El-Sobhi",
+    "description": "Facharzt für Ernährungsmedizin in Uchte, Niedersachsen. Ganzheitliches Gesundheitscoaching für nachhaltiges Abnehmen ohne Hunger & Verzicht.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007BFF",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "de",
+    "dir": "ltr",
+    "categories": ["health", "medical", "wellness"],
+    "icons": [
+        {
+            "src": "Bilder/icon-groß.ico",
+            "sizes": "192x192",
+            "type": "image/x-icon",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "Bilder/blau-logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
