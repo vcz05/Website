@@ -78,7 +78,7 @@
     // ======= Direkt in Google Sheets schreiben =======
     // Option 1: Google Apps Script Web App (EMPFOHLEN)
     // Erstelle ein Google Apps Script und verwende die Web App URL
-    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8VZOfxDa3GPw6_8JILTBJVPw9lEtoZ2M4fvtGew5alDMKCdDaZfHeqFtXvnTDW2xmHA';
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzi1pHFpRW1yRHvIV5rHALk7gLGZFigU8ihOWK05a9-mCx0_NUGRqvQavX9kFPNrvf5NQ/exec';
     
     // Option 2: Google Sheets API (komplexer)
     const GOOGLE_SHEETS_API_KEY = 'YOUR_API_KEY';
@@ -414,11 +414,27 @@
                     invest: answers.invest || ''
                 };
                 
-                await fetch(GOOGLE_APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                // CORS-Workaround: Form Submit verwenden
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = GOOGLE_APPS_SCRIPT_URL;
+                form.target = '_blank';
+                
+                // Daten als versteckte Felder hinzufügen
+                Object.keys(payload).forEach(key => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    input.value = payload[key];
+                    form.appendChild(input);
                 });
+                
+                // Formular temporär hinzufügen und absenden
+                document.body.appendChild(form);
+                form.submit();
+                document.body.removeChild(form);
+                
+                console.log('Daten via Form Submit gesendet:', payload);
             }
             
             // Option 2: Google Sheets API (falls konfiguriert)
