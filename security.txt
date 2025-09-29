@@ -8,3 +8,4 @@ Policy: https://coaching.hischamelsobhi.de/datenschutz.html
 # Security Policy for Hischam El-Sobhi - ZFG Zentrum für Gesundheit
 # This file is used to report security vulnerabilities
 # Please report any security issues to the contact above
+# For medical emergencies, please contact emergency services directly

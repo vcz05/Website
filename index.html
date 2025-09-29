@@ -16,6 +16,90 @@
 
     <!-- 🔽 Hier kommt dein Tag hin -->
   <meta name="google-site-verification" content="98LtDMRrRdqVomdRZ7KZAnbTcKJtK_CSHD2I_zbvtTQ" />
+  
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '687643727168587');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=687643727168587&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Zusatz: Zeit- und Scroll-Tracking -->
+    <script>
+    // ------- Zeit auf der Seite (einmalig pro Schwelle) -------
+    (function() {
+      var timeEvents = [
+        {ms: 5000,  name: 'TimeOnPage_5s'},
+        {ms: 10000, name: 'TimeOnPage_10s'},
+        {ms: 20000, name: 'TimeOnPage_20s'},
+        {ms: 45000, name: 'TimeOnPage_45s'}
+      ];
+      var firedTimes = {};
+
+      timeEvents.forEach(function(te) {
+        setTimeout(function() {
+          if (!firedTimes[te.name]) {
+            fbq('trackCustom', te.name);
+            firedTimes[te.name] = true;
+          }
+        }, te.ms);
+      });
+    })();
+
+    // ------- Scrolltiefe (einmalig pro Schwelle) -------
+    (function() {
+      var thresholds = [10, 30, 50, 75]; // in Prozent
+      var firedScroll = {};
+      var ticking = false;
+
+      function getScrollPercent() {
+        var doc = document.documentElement;
+        var scrollTop = window.scrollY || doc.scrollTop || 0;
+        var viewport = window.innerHeight || doc.clientHeight || 0;
+        var full = doc.scrollHeight || 0;
+        if (full <= 0) return 0;
+        return ((scrollTop + viewport) / full) * 100;
+      }
+
+      function checkAndFire() {
+        var p = getScrollPercent();
+        thresholds.forEach(function(th) {
+          var key = 'Scroll_' + th + '_percent';
+          if (p >= th && !firedScroll[key]) {
+            fbq('trackCustom', key);
+            firedScroll[key] = true;
+          }
+        });
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(checkAndFire);
+        }
+      }
+
+      // initial prüfen (falls Seite sehr kurz ist)
+      checkAndFire();
+      window.addEventListener('scroll', onScroll, {passive: true});
+      window.addEventListener('resize', onScroll, {passive: true});
+      window.addEventListener('orientationchange', onScroll);
+    })();
+    </script>
+    <!-- Ende Zusatz -->
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -309,7 +393,7 @@
             </div>
 
             <!-- CTA Button -->
-            <a href="terminplanung.html" target="_blank"
+            <a href="terminplanung.html" target="_blank" onclick="fbq('track', 'InitiateCheckout');"
             class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-3 py-2 rounded-full text-sm font-bold text-white shadow-md hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 min-w-[0] w-auto">
                 <span class="flex flex-col items-start leading-tight">
                     <span class="hidden lg:inline">Bewerbung starten</span>
@@ -335,7 +419,7 @@
                 <a href="zusammenarbeit.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Unsere Betreuung</a>
                 <a href="testimonials.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Patientenerfolge</a>
                 <a href="ueber-uns.html" class="text-gray-800 text-2xl font-semibold touch-target hover:text-primary transition-colors">Über uns</a>
-                <a href="terminplanung.html" target="_blank"
+                <a href="terminplanung.html" target="_blank" onclick="fbq('track', 'InitiateCheckout');"
                    class="bg-yellow-500 text-white px-8 py-4 rounded-full text-xl font-semibold touch-target hover:bg-yellow-400 transition-all duration-300 shadow-lg">
                     Bewerbung starten
                 </a>
@@ -390,7 +474,7 @@
                         Mit einem ganzheitlichen und ärztlich fundierten Ansatz bringst du deinen Körper ins Gleichgewicht – befreit von Heißhunger und körperlichen Beschwerden, hin zu einem Gewicht, das sich endlich leicht anfühlt
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="terminplanung.html" target="_blank"
+                        <a href="terminplanung.html" target="_blank" onclick="fbq('track', 'InitiateCheckout');"
                             class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-bold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-auto mx-auto sm:w-auto touch-target">
                             <span class="flex flex-col items-start">
                                 <span class="font-bold">Bewerbung starten</span>
@@ -416,7 +500,7 @@
                         Mit einem ganzheitlichen und ärztlich fundierten Ansatz bringst du deinen Körper ins Gleichgewicht – befreit von Heißhunger und körperlichen Beschwerden, hin zu einem Gewicht, das sich endlich leicht anfühlt
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="terminplanung.html" target="_blank"
+                        <a href="terminplanung.html" target="_blank" onclick="fbq('track', 'InitiateCheckout');"
                             class="relative flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 sm:px-8 py-4 rounded-full text-lg sm:text-xl font-bold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-full sm:w-auto touch-target">
                             <span class="flex flex-col items-start">
                                 <span class="font-bold">Bewerbung starten</span>
@@ -1124,7 +1208,7 @@
         
             <!-- CTA Button -->
             <div class="text-center mt-12 fade-in">
-                <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank" 
+                <a href="https://api.leadconnectorhq.com/widget/bookings/beratungmithischamelsobhi" target="_blank" onclick="fbq('track', 'Lead');"
                    class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-semibold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-full sm:w-auto mx-auto max-w-xs">
                     <span class="flex flex-col items-start">
                         <span>Jetzt bewerben</span>
@@ -1216,7 +1300,7 @@
                         <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Starte jetzt deine Gesundheitsrevolution!</h3>
                         <p class="text-base text-gray-700 leading-relaxed">Starte jetzt deine Veränderung und lass uns gemeinsam den ersten Schritt gehen! Mit ärztlicher Begleitung und einem individuellen Plan erreichen wir deine Ziele nachhaltig.</p>
                         <div class="pt-2">
-                            <a href="terminplanung.html" target="_blank" 
+                            <a href="terminplanung.html" target="_blank" onclick="fbq('track', 'InitiateCheckout');"
                                class="relative flex flex-row items-center justify-between bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-bold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 w-full sm:w-auto">
                                 <span class="flex flex-col items-start">
                                     <span class="font-bold">Bewerbung starten</span>

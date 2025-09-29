@@ -1,5 +1,4 @@
 # Hischam El-Sobhi - Ärztliches Gesundheitscoaching
-# Deutschlands Nummer 1 Abnehmprogramm
 # ZFG Zentrum für Gesundheit, Uchte, Niedersachsen
 
 ## Über uns
@@ -34,6 +33,7 @@ Hischam El-Sobhi ist Facharzt für Allgemeinmedizin, Ernährungsmedizin und Akup
 - Praxis: ZFG Zentrum für Gesundheit
 - Adresse: Mindener Str. 12, 31600 Uchte, Niedersachsen
 - Email: huschi.doc@web.de
+- Telefon: +49 (5763) 2343
 - Öffnungszeiten: Mo-Fr 8:00-12:00, Mo&Di 16:00-18:00
 
 ## Online-Präsenz

@@ -25,6 +25,8 @@
     Schema.org Markup
     Open Graph Protocol
     Twitter Cards
+    Facebook Pixel Integration
+    Go High Level Webhook Integration
 
 # SITE
 

@@ -6,6 +6,90 @@
     <title>Bewerbung starten | Praxis in Uchte – Hischam El‑Sobhi</title>
     <meta name="description" content="Schritt-für-Schritt-Bewerbung: Beantworte wenige Fragen und prüfe, ob ein persönliches Gespräch sinnvoll ist.">
     <link rel="canonical" href="https://coaching.hischamelsobhi.de/terminplanung.html">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '687643727168587');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=687643727168587&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Zusatz: Zeit- und Scroll-Tracking -->
+    <script>
+    // ------- Zeit auf der Seite (einmalig pro Schwelle) -------
+    (function() {
+      var timeEvents = [
+        {ms: 5000,  name: 'TimeOnPage_5s'},
+        {ms: 10000, name: 'TimeOnPage_10s'},
+        {ms: 20000, name: 'TimeOnPage_20s'},
+        {ms: 45000, name: 'TimeOnPage_45s'}
+      ];
+      var firedTimes = {};
+
+      timeEvents.forEach(function(te) {
+        setTimeout(function() {
+          if (!firedTimes[te.name]) {
+            fbq('trackCustom', te.name);
+            firedTimes[te.name] = true;
+          }
+        }, te.ms);
+      });
+    })();
+
+    // ------- Scrolltiefe (einmalig pro Schwelle) -------
+    (function() {
+      var thresholds = [10, 30, 50, 75]; // in Prozent
+      var firedScroll = {};
+      var ticking = false;
+
+      function getScrollPercent() {
+        var doc = document.documentElement;
+        var scrollTop = window.scrollY || doc.scrollTop || 0;
+        var viewport = window.innerHeight || doc.clientHeight || 0;
+        var full = doc.scrollHeight || 0;
+        if (full <= 0) return 0;
+        return ((scrollTop + viewport) / full) * 100;
+      }
+
+      function checkAndFire() {
+        var p = getScrollPercent();
+        thresholds.forEach(function(th) {
+          var key = 'Scroll_' + th + '_percent';
+          if (p >= th && !firedScroll[key]) {
+            fbq('trackCustom', key);
+            firedScroll[key] = true;
+          }
+        });
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(checkAndFire);
+        }
+      }
+
+      // initial prüfen (falls Seite sehr kurz ist)
+      checkAndFire();
+      window.addEventListener('scroll', onScroll, {passive: true});
+      window.addEventListener('resize', onScroll, {passive: true});
+      window.addEventListener('orientationchange', onScroll);
+    })();
+    </script>
+    <!-- Ende Zusatz -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -36,7 +120,7 @@
                         Schön, dass du da bist. Damit wir dich gezielt unterstützen können, beantworten wir gemeinsam ein paar knackige Fragen – kurz, klar und auf den Punkt.
                     </p>
                     <p class="text-sm text-gray-600 mb-8">Wir arbeiten bewusst mit ausgewählten Bewerbern. Deine Antworten zeigen uns, ob und wie wir dich am besten begleiten können.</p>
-                    <button id="startBtn" class="inline-flex items-center justify-center bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-semibold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
+                    <button id="startBtn" onclick="fbq('track', 'InitiateCheckout');" class="inline-flex items-center justify-center bg-gradient-to-r from-yellow-500 to-yellow-400 px-6 py-3 rounded-full text-base font-semibold text-white shadow-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 touch-target">
                         Jetzt Bewerbung starten
                         <span class="ml-3 inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
                             <i class="fas fa-arrow-right text-white text-sm"></i>
@@ -75,17 +159,12 @@
     </main>
 
     <script>
-    // ======= Direkt in Google Sheets schreiben =======
-    // Option 1: Google Apps Script Web App (EMPFOHLEN)
-    // Erstelle ein Google Apps Script und verwende die Web App URL
+    // ======= Lead-Integration =======
+    // Go High Level Webhook (Hauptintegration)
+    const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/rSmjF755vmdOhFQVTAVz/webhook-trigger/53582fcb-d46c-4d39-afc3-706b91683a21';
+    
+    // Google Apps Script als Fallback
     const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzi1pHFpRW1yRHvIV5rHALk7gLGZFigU8ihOWK05a9-mCx0_NUGRqvQavX9kFPNrvf5NQ/exec';
-    
-    // Option 2: Google Sheets API (komplexer)
-    const GOOGLE_SHEETS_API_KEY = 'YOUR_API_KEY';
-    const GOOGLE_SHEETS_ID = 'YOUR_SHEET_ID';
-    
-    // Option 3: Einfacher Webhook zu Google Sheets
-    const SHEETS_WEBHOOK_URL = '';
 
     // ======= Fragen-Definition =======
     // type: 'choice' (single choice per click, auto-advance) | 'text' (Eingabe, Enter oder Weiter) | 'number'
@@ -235,6 +314,13 @@
             submitBtn.innerHTML = 'Fragebogen abschicken & Termin wählen <span class="ml-3"><i class="fas fa-arrow-right"></i></span>';
             submitBtn.addEventListener('click', (e) => {
                 e.preventDefault();
+                // Facebook Lead Event tracken
+                fbq('track', 'Lead', {
+                    content_name: 'Bewerbungsformular',
+                    content_category: 'Gesundheitscoaching',
+                    value: 0.00,
+                    currency: 'EUR'
+                });
                 submitAnswers(true);
             });
             wrapper.appendChild(submitBtn);
@@ -395,37 +481,65 @@
     }
 
     async function submitAnswers(redirectAfter = false) {
-        // ======= Direkt in Google Sheets schreiben =======
+        // ======= Lead-Integration =======
         try {
-            // Option 1: Google Apps Script Web App (EMPFOHLEN)
-            if (GOOGLE_APPS_SCRIPT_URL && GOOGLE_APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec') {
-                const payload = {
-                    timestamp: new Date().toISOString(),
-                    geschlecht: answers.geschlecht || '',
-                    vorname: answers.vorname || '',
-                    nachname: answers.nachname || '',
-                    alter: answers.alter || '',
-                    herausforderung: answers.herausforderung_bereich || '',
-                    ziel_6m: answers.ziel_6m || '',
-                    abnehmen: answers.abnehmen || '',
-                    job: answers.job || '',
-                    email: answers.email || '',
-                    telefon: answers.telefon || '',
-                    invest: answers.invest || ''
+            const leadData = {
+                timestamp: new Date().toISOString(),
+                geschlecht: answers.geschlecht || '',
+                vorname: answers.vorname || '',
+                nachname: answers.nachname || '',
+                alter: answers.alter || '',
+                herausforderung: answers.herausforderung_bereich || '',
+                ziel_6m: answers.ziel_6m || '',
+                abnehmen: answers.abnehmen || '',
+                job: answers.job || '',
+                email: answers.email || '',
+                telefon: answers.telefon || '',
+                invest: answers.invest || ''
+            };
+            
+            // Hauptintegration: Go High Level Webhook
+            if (GHL_WEBHOOK_URL) {
+                const ghlPayload = {
+                    firstName: leadData.vorname,
+                    lastName: leadData.nachname,
+                    email: leadData.email,
+                    phone: leadData.telefon,
+                    tags: ['Website-Formular', 'Gesundheitscoaching'],
+                    customFields: {
+                        geschlecht: leadData.geschlecht,
+                        alter: leadData.alter,
+                        herausforderung: leadData.herausforderung,
+                        ziel_6m: leadData.ziel_6m,
+                        abnehmen: leadData.abnehmen,
+                        job: leadData.job,
+                        invest: leadData.invest
+                    }
                 };
                 
+                await fetch(GHL_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(ghlPayload)
+                });
+                
+                console.log('Lead zu Go High Level gesendet:', ghlPayload);
+            }
+            
+            // Fallback: Google Apps Script
+            if (GOOGLE_APPS_SCRIPT_URL) {
                 // CORS-Workaround: Form Submit verwenden
                 const form = document.createElement('form');
                 form.method = 'POST';
                 form.action = GOOGLE_APPS_SCRIPT_URL;
-                form.target = '_blank';
+                form.target = '_self';
                 
                 // Daten als versteckte Felder hinzufügen
-                Object.keys(payload).forEach(key => {
+                Object.keys(leadData).forEach(key => {
                     const input = document.createElement('input');
                     input.type = 'hidden';
                     input.name = key;
-                    input.value = payload[key];
+                    input.value = leadData[key];
                     form.appendChild(input);
                 });
                 
@@ -434,54 +548,19 @@
                 form.submit();
                 document.body.removeChild(form);
                 
-                console.log('Daten via Form Submit gesendet:', payload);
+                console.log('Daten via Google Apps Script gesendet:', leadData);
             }
             
-            // Option 2: Google Sheets API (falls konfiguriert)
-            if (GOOGLE_SHEETS_API_KEY && GOOGLE_SHEETS_ID) {
-                const values = [
-                    new Date().toISOString(),
-                    answers.geschlecht || '',
-                    answers.vorname || '',
-                    answers.nachname || '',
-                    answers.alter || '',
-                    answers.herausforderung_bereich || '',
-                    answers.ziel_6m || '',
-                    answers.abnehmen || '',
-                    answers.job || '',
-                    answers.email || '',
-                    answers.telefon || '',
-                    answers.invest || ''
-                ];
-                
-                const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEETS_ID}/values/A:Z:append?valueInputOption=RAW&key=${GOOGLE_SHEETS_API_KEY}`;
-                await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ values: [values] })
-                });
-            }
-            
-            // Option 3: Webhook (falls konfiguriert)
-            if (SHEETS_WEBHOOK_URL) {
-                const payload = {
-                    timestamp: new Date().toISOString(),
-                    ...answers
-                };
-                await fetch(SHEETS_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-            }
-            
-            console.log('Antworten in Google Sheets gespeichert:', answers);
+            console.log('Lead-Daten verarbeitet:', leadData);
         } catch (e) {
-            console.warn('Speichern fehlgeschlagen:', e);
+            console.warn('Lead-Integration fehlgeschlagen:', e);
         }
 
         if (redirectAfter) {
-            window.location.href = 'https://hischamelsobhi.de/termin';
+            // Kurze Verzögerung, damit die Daten gespeichert werden können
+            setTimeout(() => {
+                window.location.href = 'https://hischamelsobhi.de/termin';
+            }, 1000);
             return;
         }
 

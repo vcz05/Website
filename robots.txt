@@ -1,9 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap locations
+# Sitemap location
 Sitemap: https://coaching.hischamelsobhi.de/sitemap.xml
-Sitemap: https://coaching.hischamelsobhi.de/sitemap.txt
 
 # Allow all search engines to crawl everything
 User-agent: Googlebot

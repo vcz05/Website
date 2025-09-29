@@ -3,4 +3,4 @@
 # For more information, visit: https://iabtechlab.com/ads-txt/
 
 # No advertising partners currently configured
-# This file is present for SEO completeness
+# This file is present for SEO completeness and future advertising needs
